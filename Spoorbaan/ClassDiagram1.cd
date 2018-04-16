@@ -27,7 +27,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Spoorbaan.Controller">
-    <Position X="7.5" Y="1.5" Width="1.5" />
+    <Position X="4.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAgAAgCAEAAAAAAAAAAAAAIAAAkAAAAAAAAQAA=</HashCode>
       <FileName>Controller.cs</FileName>
@@ -37,10 +37,47 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Spoorbaan.Spoorbaan">
-    <Position X="10.5" Y="1.75" Width="1.5" />
+    <Position X="6.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>CAAAAAgAAAABAAAAAAAAIAAAAABAAgAAAAJgAEAAAAA=</HashCode>
       <FileName>Spoorbaan.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="elementen" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Spoorbaan.SpoorElement">
+    <Position X="10" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAABAAAAAAABgAEAAEAA=</HashCode>
+      <FileName>SpoorElement.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Orientatie" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Spoorbaan.SpoorRailsRecht">
+    <Position X="2" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAA=</HashCode>
+      <FileName>SpoorRailsRecht.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spoorbaan.SpoorRailsKrom">
+    <Position X="4.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAQEAAAAA=</HashCode>
+      <FileName>SpoorRailsKrom.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="rotatie" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Spoorbaan.SpoorwegOvergang">
+    <Position X="7.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAEEAAAAQAAAAAAAAAAAAEAgAAA=</HashCode>
+      <FileName>SpoorwegOvergang.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="Spoorbaan.OvergangSeinStatus" Collapsed="true">
@@ -58,7 +95,7 @@
     </TypeIdentifier>
   </Enum>
   <Enum Name="Spoorbaan.Orientatie" Collapsed="true">
-    <Position X="2.25" Y="2.75" Width="1.5" />
+    <Position X="12.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAIAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enums.cs</FileName>
@@ -72,7 +109,7 @@
     </TypeIdentifier>
   </Enum>
   <Enum Name="Spoorbaan.RailRotatie" Collapsed="true">
-    <Position X="0.5" Y="3.5" Width="1.5" />
+    <Position X="4.75" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAACAAABAAABAAAAAAACAAAAAAAAAA=</HashCode>
       <FileName>Enums.cs</FileName>

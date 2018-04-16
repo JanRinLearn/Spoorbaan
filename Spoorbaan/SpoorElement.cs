@@ -5,40 +5,24 @@ using System.Text;
 
 namespace Spoorbaan
 {
-    public class Spoorbaan
+    public abstract class SpoorElement
     {
         private int breedte;
-        private int hoogte;
-        private int overgangen;
-        private int stations;
+        private int grootte;
         private int x;
         private int y;
-        private List<SpoorElement> elementen;
 
-        public Spoorbaan()
+        public SpoorElement()
         {
             throw new System.NotImplementedException();
         }
 
-        public int Overgangen
+        public Orientatie Orientatie
         {
             get => default(int);
             set
             {
             }
-        }
-
-        public int Stations
-        {
-            get => default(int);
-            set
-            {
-            }
-        }
-
-        private void MaakSpoorbaan()
-        {
-            throw new System.NotImplementedException();
         }
 
         public void Teken()

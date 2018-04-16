@@ -5,22 +5,16 @@ using System.Text;
 
 namespace Spoorbaan
 {
-    public class Spoorbaan
+    public class SpoorwegOvergang : SpoorElement
     {
-        private int breedte;
-        private int hoogte;
-        private int overgangen;
-        private int stations;
-        private int x;
-        private int y;
-        private List<SpoorElement> elementen;
+        private int rails;
 
-        public Spoorbaan()
+        public SpoorwegOvergang()
         {
             throw new System.NotImplementedException();
         }
 
-        public int Overgangen
+        public int Sein1
         {
             get => default(int);
             set
@@ -28,7 +22,7 @@ namespace Spoorbaan
             }
         }
 
-        public int Stations
+        public int Sein
         {
             get => default(int);
             set
@@ -36,7 +30,15 @@ namespace Spoorbaan
             }
         }
 
-        private void MaakSpoorbaan()
+        public int Status
+        {
+            get => default(int);
+            set
+            {
+            }
+        }
+
+        private void SetStatus()
         {
             throw new System.NotImplementedException();
         }
