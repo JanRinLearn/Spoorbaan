@@ -18,7 +18,7 @@ namespace Spoorbaan
 
         public StationSein Sein1
         {
-            get => default(int);
+            get => default(StationSein);
             set
             {
             }
@@ -26,7 +26,7 @@ namespace Spoorbaan
 
         public StationSein Sein2
         {
-            get => default(int);
+            get => default(StationSein);
             set
             {
             }
@@ -34,7 +34,7 @@ namespace Spoorbaan
 
         public StationSeinStatus StationSeinStatus
         {
-            get => default(int);
+            get => default(StationSeinStatus);
             set
             {
             }

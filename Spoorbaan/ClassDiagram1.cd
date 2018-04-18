@@ -110,6 +110,7 @@
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="status" />
+      <Field Name="kleur" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Spoorbaan.Sein">
@@ -195,6 +196,13 @@
     <Position X="4.75" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAACAAABAAABAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Spoorbaan.LampKleur" Collapsed="true">
+    <Position X="23.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
       <FileName>Enums.cs</FileName>
     </TypeIdentifier>
   </Enum>

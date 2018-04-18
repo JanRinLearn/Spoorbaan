@@ -6,24 +6,28 @@ using System.Threading.Tasks;
 
 namespace Spoorbaan
 {
-    enum OvergangSeinStatus
+    public enum OvergangSeinStatus
     {
         Aan, Uit, Storing
     }
-    enum StationSeinStatus
+    public enum StationSeinStatus
     {
         Groen, Rood, Uit, Storing
     }
-    enum Orientatie
+    public enum Orientatie
     {
         Horizontaal, Verticaal
     }
-    enum LampStatus
+    public enum LampStatus
     {
         Aan, Uit
     }
-    enum RailRotatie
+    public enum RailRotatie
     {
         _0,_90,_180,_270
+    }
+    public enum LampKleur
+    {
+        Groen, Rood
     }
 }

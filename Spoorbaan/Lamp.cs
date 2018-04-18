@@ -7,30 +7,38 @@ namespace Spoorbaan
 {
     public class Lamp
     {
-        private int kleur;
-        private int straal;
-        private int x;
-        private int y;
-        private LampStatus status;
+        //LampKleur kan eigenlijk alleen Rood of Groen zijn bij een spoorlicht, slecht af te handelen in string.
+        protected LampKleur kleur;
+        protected int straal;
+        protected int x;
+        protected int y;
+        protected LampStatus status;
 
-        public Lamp()
+        //Default Lamp heeft altijd een x en y coordinaat nodig, maar de straal kleur en status kunnen default zijn
+        public Lamp(int x, int y)
         {
-            throw new System.NotImplementedException();
+            this.x = x;
+            this.y = y;
+            straal = 2;
+            kleur = LampKleur.Groen;
+            status = LampStatus.Aan;
         }
 
-        public int Kleur
+        public LampKleur Kleur
         {
-            get => default(int);
+            get => kleur;
             set
             {
+                kleur = value;
             }
         }
 
-        public int Status
+        public LampStatus Status
         {
-            get => default(int);
+            get => status;
             set
             {
+                status = value;
             }
         }
 
