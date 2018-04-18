@@ -75,20 +75,103 @@
   </Class>
   <Class Name="Spoorbaan.SpoorwegOvergang">
     <Position X="7.75" Y="8.5" Width="1.5" />
+    <AssociationLine Name="status" Type="Spoorbaan.OvergangSeinStatus">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="1.459" Y="0.176" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAAAAAAAAEEAAAAQAAAAAAAAAAAAEAgAAA=</HashCode>
+      <HashCode>ACQAAAAEAAAAAAQAAAAEAAAAQAAAAAAAAAAAAEAgAAA=</HashCode>
       <FileName>SpoorwegOvergang.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="sein1" />
+      <Field Name="sein2" />
+      <Field Name="status" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Spoorbaan.TreinStation">
+    <Position X="10.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAAAAAAAAAAAQAAAAEAAAAQAAAAAAAAAAAAEAggAA=</HashCode>
+      <FileName>TreinStation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="status" />
+      <Field Name="sein1" />
+      <Field Name="sein2" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Spoorbaan.Lamp">
+    <Position X="19.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAAAQEAAAAAAAAAAAAAAAAAAAAAAAAgABgAEAAAAA=</HashCode>
+      <FileName>Lamp.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="status" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Spoorbaan.Sein">
+    <Position X="16.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAIAAABEAAAABABgAkAAAAI=</HashCode>
+      <FileName>Sein.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="lamp1" />
+      <Field Name="lamp2" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Spoorbaan.StationSein">
+    <Position X="15.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAEAAAAAAAAAAAAAAIAQAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>StationSein.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="status" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Spoorbaan.SpoorwegOvergangSein">
+    <Position X="18.25" Y="10.5" Width="1.5" />
+    <AssociationLine Name="status" Type="Spoorbaan.OvergangSeinStatus" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="19.75" Y="11.438" />
+        <Point X="20.688" Y="11.438" />
+        <Point X="20.688" Y="13.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.286" Y="0.949" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAEAAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>SpoorwegOvergangSein.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="status" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Spoorbaan.SpoorComponent">
+    <Position X="12.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAMAAAAA=</HashCode>
+      <FileName>SpoorComponent.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="elementen" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Enum Name="Spoorbaan.OvergangSeinStatus" Collapsed="true">
-    <Position X="4" Y="2.75" Width="1.5" />
+    <Position X="20" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAAEAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enums.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="Spoorbaan.StationSeinStatus" Collapsed="true">
-    <Position X="2.25" Y="3.5" Width="1.5" />
+    <Position X="12.75" Y="11" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAAAAAAAAIBAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
       <FileName>Enums.cs</FileName>
@@ -102,7 +185,7 @@
     </TypeIdentifier>
   </Enum>
   <Enum Name="Spoorbaan.LampStatus" Collapsed="true">
-    <Position X="0.5" Y="2.75" Width="1.5" />
+    <Position X="19.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAEAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enums.cs</FileName>

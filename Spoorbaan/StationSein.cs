@@ -5,32 +5,14 @@ using System.Text;
 
 namespace Spoorbaan
 {
-    public class SpoorwegOvergang : SpoorElement
+    public class StationSein : Sein
     {
-        private int rails;
-        private SpoorwegOvergangSein sein1;
-        private SpoorwegOvergangSein sein2;
-        private OvergangSeinStatus status;
+        private const int LAMP_BREEDTE = 1;
+        private StationSeinStatus status;
 
-        public SpoorwegOvergang()
+        public StationSein()
         {
             throw new System.NotImplementedException();
-        }
-
-        public int Sein1
-        {
-            get => default(int);
-            set
-            {
-            }
-        }
-
-        public int Sein2
-        {
-            get => default(int);
-            set
-            {
-            }
         }
 
         public int Status
