@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 
 namespace Spoorbaan
 {
@@ -44,7 +45,23 @@ namespace Spoorbaan
 
         public void Teken()
         {
-            throw new System.NotImplementedException();
+            Graphics g;
+            if (status == LampStatus.Aan)
+            {
+                switch (kleur) 
+                {
+                    case LampKleur.Groen:
+                        break;
+                    case LampKleur.Rood:
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+
+            }
         }
     }
 }
