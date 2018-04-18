@@ -21,8 +21,9 @@ namespace Spoorbaan
             this.x = x;
             this.y = y;
             straal = 2;
-            kleur = LampKleur.Groen;
-            status = LampStatus.Aan;
+            kleur = LampKleur.Rood;
+            status = LampStatus.Uit;
+            Graphics g;
         }
 
         public LampKleur Kleur
@@ -45,7 +46,7 @@ namespace Spoorbaan
 
         public void Teken()
         {
-            Graphics g;
+            
             if (status == LampStatus.Aan)
             {
                 switch (kleur) 
