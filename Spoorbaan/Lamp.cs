@@ -14,6 +14,7 @@ namespace Spoorbaan
         protected int x;
         protected int y;
         protected LampStatus status;
+        Graphics g;
 
         //Default Lamp heeft altijd een x en y coordinaat nodig, maar de straal kleur en status kunnen default zijn
         public Lamp(int x, int y)
@@ -23,7 +24,7 @@ namespace Spoorbaan
             straal = 2;
             kleur = LampKleur.Rood;
             status = LampStatus.Uit;
-            Graphics g;
+
         }
 
         public LampKleur Kleur
@@ -46,14 +47,18 @@ namespace Spoorbaan
 
         public void Teken()
         {
-            
+            SolidBrush sb = new SolidBrush(Color.White);
             if (status == LampStatus.Aan)
             {
-                switch (kleur) 
+                switch (kleur)
                 {
                     case LampKleur.Groen:
+                        sb.Color = Color.Green;
+                        g.FillEllipse(sb, x, y, 5, 5);
                         break;
                     case LampKleur.Rood:
+                        sb.Color = Color.Red;
+                        g.FillEllipse(sb, x, y, 5, 5);
                         break;
                     default:
                         break;
@@ -61,7 +66,8 @@ namespace Spoorbaan
             }
             else
             {
-
+                sb.Color = Color.Black;
+                g.FillEllipse(sb, x, y, 5, 5);
             }
         }
     }
