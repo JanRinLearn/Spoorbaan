@@ -37,6 +37,7 @@
             this.TekenGrond.Name = "TekenGrond";
             this.TekenGrond.Size = new System.Drawing.Size(775, 425);
             this.TekenGrond.TabIndex = 0;
+            this.TekenGrond.Paint += new System.Windows.Forms.PaintEventHandler(this.TekenGrond_Paint);
             // 
             // Form1
             // 

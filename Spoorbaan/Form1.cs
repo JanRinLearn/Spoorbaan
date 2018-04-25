@@ -16,5 +16,13 @@ namespace Spoorbaan
         {
             InitializeComponent();
         }
+
+        private void TekenGrond_Paint(object sender, PaintEventArgs e)
+        {
+            Lamp lamp = new Lamp(4, 4);
+            lamp.Status = LampStatus.Aan;
+            Graphics g = e.Graphics;
+            lamp.Teken(g);
+        }
     }
 }
