@@ -15,9 +15,9 @@ namespace Spoorbaan
         private Lamp lamp1;
         private Lamp lamp2;
 
-        public Sein()
+        private Sein()
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public int Lamp1
