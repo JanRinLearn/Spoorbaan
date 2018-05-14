@@ -10,9 +10,12 @@ namespace Spoorbaan
         private const int LAMP_BREEDTE = 1;
         private StationSeinStatus status;
 
-        public StationSein()
+        public StationSein(int breedte, int hoogte, int x, int y):base(breedte,hoogte,x,y)
         {
-            throw new System.NotImplementedException();
+            Lamp lamp1 = new Lamp(x, y);
+            Lamp lamp2 = new Lamp(x, y, LampKleur.Groen);
+            Lamp1 = lamp1;
+            Lamp2 = lamp2;
         }
 
         public int Status

@@ -15,24 +15,29 @@ namespace Spoorbaan
         private Lamp lamp1;
         private Lamp lamp2;
 
-        private Sein()
+        public Sein(int breedte, int hoogte, int x, int y)
         {
-            
+            this.breedte = breedte;
+            this.hoogte = hoogte;
+            this.x = x;
+            this.y = y;
         }
 
-        public int Lamp1
+        public Lamp Lamp1
         {
-            get => default(int);
+            get => lamp1;
             set
             {
+                lamp1 = value;
             }
         }
 
-        public int Lamp2
+        public Lamp Lamp2
         {
-            get => default(int);
+            get => lamp2;
             set
             {
+                lamp2 = value;
             }
         }
 
