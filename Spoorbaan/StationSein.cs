@@ -10,10 +10,10 @@ namespace Spoorbaan
         private const int LAMP_BREEDTE = 1;
         private StationSeinStatus status;
 
-        public StationSein(int breedte, int hoogte, int x, int y):base(breedte,hoogte,x,y)
+        public StationSein(int breedte, int hoogte, int x, int y) : base(breedte, hoogte, x, y)
         {
-            Lamp lamp1 = new Lamp(x, y);
-            Lamp lamp2 = new Lamp(x, y, LampKleur.Groen);
+            Lamp lamp1 = new Lamp(x, y, LAMP_BREEDTE);
+            Lamp lamp2 = new Lamp(x, y, LAMP_BREEDTE, LampKleur.Groen);
             Lamp1 = lamp1;
             Lamp2 = lamp2;
         }
