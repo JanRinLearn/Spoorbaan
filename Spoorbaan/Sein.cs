@@ -41,7 +41,7 @@ namespace Spoorbaan
             }
         }
 
-        public void Teken()
+        public virtual void Teken()
         {
             throw new System.NotImplementedException();
         }

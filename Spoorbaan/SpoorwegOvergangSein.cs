@@ -30,7 +30,7 @@ namespace Spoorbaan
             throw new System.NotImplementedException();
         }
 
-        public void Teken()
+        public override void Teken()
         {
             throw new System.NotImplementedException();
         }
