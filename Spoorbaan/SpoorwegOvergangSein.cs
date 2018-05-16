@@ -9,9 +9,12 @@ namespace Spoorbaan
     {
         private OvergangSeinStatus status;
 
-        public SpoorwegOvergangSein()
+        public SpoorwegOvergangSein(int breedte, int hoogte, int x, int y) : base(breedte, hoogte, x, y)
         {
-            throw new System.NotImplementedException();
+            Lamp lamp1 = new Lamp(x, y);
+            Lamp lamp2 = new Lamp(x, y);
+            Lamp1 = lamp1;
+            Lamp2 = lamp2;
         }
 
         public int Status

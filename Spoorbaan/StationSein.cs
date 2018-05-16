@@ -18,11 +18,12 @@ namespace Spoorbaan
             Lamp2 = lamp2;
         }
 
-        public int Status
+        public StationSeinStatus Status
         {
-            get => default(int);
+            get => status;
             set
             {
+                status = value;
             }
         }
 
