@@ -21,15 +21,11 @@ namespace Spoorbaan
         public StationSeinStatus Status
         {
             get => status;
-            set
-            {
-                status = value;
-            }
         }
 
-        private void SetStatus()
+        private void SetStatus(StationSeinStatus s)
         {
-            throw new System.NotImplementedException();
+            status = s;
         }
 
         public override void Teken()

@@ -17,17 +17,14 @@ namespace Spoorbaan
             Lamp2 = lamp2;
         }
 
-        public int Status
+        public OvergangSeinStatus Status
         {
-            get => default(int);
-            set
-            {
-            }
+            get => status;
         }
 
-        private void SetStatus()
+        private void SetStatus(OvergangSeinStatus s)
         {
-            throw new System.NotImplementedException();
+            status = s;
         }
 
         public override void Teken()
