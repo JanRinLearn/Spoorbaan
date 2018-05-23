@@ -11,7 +11,6 @@ namespace Spoorbaan
         private int hoogte;
         private int x;
         private int y;
-        private const int LAMP_BREEDTE = 1;
         private Lamp lamp1;
         private Lamp lamp2;
 

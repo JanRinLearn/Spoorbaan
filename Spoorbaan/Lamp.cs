@@ -10,30 +10,28 @@ namespace Spoorbaan
     public class Lamp
     {
         //LampKleur kan eigenlijk alleen Rood of Groen zijn bij een spoorlicht, slecht af te handelen in string.
-        //Alle lampen zullen de dezelfde straal hebben, dus contant zou hiervoor beter moeten werken, als het niet was dat deze contant wordt meegegeven door de seinen zelf
+        //Alle lampen zullen de dezelfde STRAAL hebben, Constant in de Lamp plaatsen
         //Voor een van de unit tests heb ik de uitput van de brush nodig, daarom wordt deze vroeger aangemaakt.
         protected LampKleur kleur;
-        protected int straal;
+        private const int STRAAL = 10;
         protected int x;
         protected int y;
         protected LampStatus status;
         protected SolidBrush sb = new SolidBrush(Color.Black);
 
-        //Default Lamp heeft altijd een x en y coordinaat nodig, maar de kleur en status kunnen default zijn. Straal wordt meegegeven uit de contant in sein.
-        public Lamp(int x, int y, int straal)
+        //Default Lamp heeft altijd een x en y coordinaat nodig, maar de kleur en status kunnen default zijn.
+        public Lamp(int x, int y)
         {
             this.x = x;
             this.y = y;
-            this.straal = straal;
             kleur = LampKleur.Rood;
             status = LampStatus.Uit;
         }
         //Override method voor als de lamp start kleur moet meekrijgen
-        public Lamp(int x, int y, int straal,LampKleur lampKleur)
+        public Lamp(int x, int y,LampKleur lampKleur)
         {
             this.x = x;
             this.y = y;
-            this.straal = straal;
             this.kleur = lampKleur;
             status = LampStatus.Uit;
         }
@@ -71,17 +69,17 @@ namespace Spoorbaan
                 {
                     case LampKleur.Groen:
                         sb.Color = Color.Green;
-                        g.FillEllipse(sb, x, y, straal, straal);
+                        g.FillEllipse(sb, x, y, STRAAL, STRAAL);
                         
                         break;
                     case LampKleur.Rood:
                         sb.Color = Color.Red;
-                        g.FillEllipse(sb, x, y, straal, straal);
+                        g.FillEllipse(sb, x, y, STRAAL, STRAAL);
                         
                         break;
                     default:
                         sb.Color = Color.Gold;
-                        g.FillEllipse(sb, x, y, straal, straal);
+                        g.FillEllipse(sb, x, y, STRAAL, STRAAL);
                         break;
                 }
             }
