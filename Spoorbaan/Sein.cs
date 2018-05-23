@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 
@@ -13,6 +14,7 @@ namespace Spoorbaan
         private int y;
         private Lamp lamp1;
         private Lamp lamp2;
+        private SolidBrush sb = new SolidBrush(Color.Black);
 
         public Sein(int breedte, int hoogte, int x, int y)
         {
@@ -40,9 +42,9 @@ namespace Spoorbaan
             }
         }
 
-        public virtual void Teken()
+        public virtual void Teken(Graphics g)
         {
-            throw new System.NotImplementedException();
+            g.FillRectangle(sb, x, y, breedte, hoogte);
         }
     }
 }
