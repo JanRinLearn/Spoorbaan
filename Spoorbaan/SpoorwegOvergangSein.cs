@@ -13,7 +13,8 @@ namespace Spoorbaan
         public SpoorwegOvergangSein(int breedte, int hoogte, int x, int y) : base(breedte, hoogte, x, y)
         {
             Lamp lamp1 = new Lamp(x, y);
-            Lamp lamp2 = new Lamp(x, y);
+            Lamp lamp2 = new Lamp(x+10, y);
+            status = OvergangSeinStatus.Aan;
             Lamp1 = lamp1;
             Lamp2 = lamp2;
         }
@@ -30,7 +31,12 @@ namespace Spoorbaan
 
         public override void Teken(Graphics g)
         {
-            throw new System.NotImplementedException();
+            if (status == OvergangSeinStatus.Aan)
+            {
+                Lamp1.Status = LampStatus.Aan;
+                Lamp2.Status = LampStatus.Aan;
+            }
+            base.Teken(g);
         }
     }
 }

@@ -30,7 +30,7 @@ namespace Spoorbaan
 
         public override void Teken(Graphics g)
         {
-            throw new System.NotImplementedException();
+            base.Teken(g);
         }
     }
 }

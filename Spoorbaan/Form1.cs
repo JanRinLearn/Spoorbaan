@@ -19,7 +19,7 @@ namespace Spoorbaan
 
         private void TekenGrond_Paint(object sender, PaintEventArgs e)
         {
-            Sein sein = new Sein(20, 10, 100, 100);
+            SpoorwegOvergangSein sein = new SpoorwegOvergangSein(20, 10, 100, 100);
             Graphics g = e.Graphics;
             sein.Teken(g);
             
