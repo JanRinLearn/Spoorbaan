@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 
@@ -27,7 +28,7 @@ namespace Spoorbaan
             status = s;
         }
 
-        public override void Teken()
+        public override void Teken(Graphics g)
         {
             throw new System.NotImplementedException();
         }

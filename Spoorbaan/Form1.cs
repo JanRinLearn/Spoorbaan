@@ -19,10 +19,10 @@ namespace Spoorbaan
 
         private void TekenGrond_Paint(object sender, PaintEventArgs e)
         {
-            Lamp lamp = new Lamp(4, 4);
-            lamp.Status = LampStatus.Aan;
+            Sein sein = new Sein(20, 10, 100, 100);
             Graphics g = e.Graphics;
-            lamp.Teken(g);
+            sein.Teken(g);
+            
         }
     }
 }

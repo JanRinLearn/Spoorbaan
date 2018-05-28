@@ -45,6 +45,8 @@ namespace Spoorbaan
         public virtual void Teken(Graphics g)
         {
             g.FillRectangle(sb, x, y, breedte, hoogte);
+            lamp1.Teken(g);
+            lamp2.Teken(g);
         }
     }
 }
