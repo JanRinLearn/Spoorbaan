@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Timers;
 
 namespace Spoorbaan
 {
@@ -34,9 +35,10 @@ namespace Spoorbaan
             if (status == OvergangSeinStatus.Aan)
             {
                 Lamp1.Status = LampStatus.Aan;
-                Lamp2.Status = LampStatus.Aan;
+                Lamp2.Status = LampStatus.Uit;
             }
             base.Teken(g);
+            
         }
     }
 }

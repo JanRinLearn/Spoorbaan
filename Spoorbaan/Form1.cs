@@ -12,16 +12,23 @@ namespace Spoorbaan
 {
     public partial class Form1 : Form
     {
+        private int ticks;
+
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void TekenGrond_Paint(object sender, PaintEventArgs e)
         {
-            SpoorwegOvergangSein sein = new SpoorwegOvergangSein(20, 10, 100, 100);
-            Graphics g = e.Graphics;
-            sein.Teken(g);
+            
+
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
             
         }
     }

@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TekenGrond = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // TekenGrond
@@ -38,6 +40,11 @@
             this.TekenGrond.Size = new System.Drawing.Size(775, 425);
             this.TekenGrond.TabIndex = 0;
             this.TekenGrond.Paint += new System.Windows.Forms.PaintEventHandler(this.TekenGrond_Paint);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -54,6 +61,7 @@
         #endregion
 
         private System.Windows.Forms.Panel TekenGrond;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
