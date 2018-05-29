@@ -12,7 +12,7 @@ namespace Spoorbaan
 {
     public partial class Form1 : Form
     {
-        private int ticks;
+        
 
         public Form1()
         {
@@ -22,8 +22,9 @@ namespace Spoorbaan
 
         private void TekenGrond_Paint(object sender, PaintEventArgs e)
         {
-            
-
+            StationSein stationSein = new StationSein(10, 30, 100, 100);
+            Graphics g = e.Graphics;
+            stationSein.Teken(g);
 
         }
 

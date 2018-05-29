@@ -9,13 +9,14 @@ namespace Spoorbaan
 {
     public class SpoorwegOvergangSein : Sein
     {
-        private OvergangSeinStatus status;
+        //Default waarde van de overgangsein is uit
+        private OvergangSeinStatus status = OvergangSeinStatus.Uit;
 
+        //Bij een overgangsein is het belangrijk dat de breedte groter is dan de hoogte
         public SpoorwegOvergangSein(int breedte, int hoogte, int x, int y) : base(breedte, hoogte, x, y)
         {
             Lamp lamp1 = new Lamp(x, y);
             Lamp lamp2 = new Lamp(x+10, y);
-            status = OvergangSeinStatus.Aan;
             Lamp1 = lamp1;
             Lamp2 = lamp2;
         }
@@ -29,7 +30,7 @@ namespace Spoorbaan
         {
             status = s;
         }
-
+        //Wordt nog verder aangepast, is nog niet volledig klaar.
         public override void Teken(Graphics g)
         {
             if (status == OvergangSeinStatus.Aan)

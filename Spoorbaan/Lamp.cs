@@ -17,7 +17,7 @@ namespace Spoorbaan
         protected int x;
         protected int y;
         protected LampStatus status;
-        protected SolidBrush sb = new SolidBrush(Color.Black);
+        protected SolidBrush sb = new SolidBrush(Color.LightGray);
 
         //Default Lamp heeft altijd een x en y coordinaat nodig, maar de kleur en status kunnen default zijn.
         public Lamp(int x, int y)
@@ -85,7 +85,7 @@ namespace Spoorbaan
             }
             else
             {
-                g.FillEllipse(sb, x, y, 5, 5);
+                g.FillEllipse(sb, x, y, STRAAL, STRAAL);
                 
             }
         }
