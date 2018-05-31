@@ -12,7 +12,7 @@ namespace Spoorbaan
         private SpoorwegOvergangSein sein2;
         private OvergangSeinStatus status;
 
-        public SpoorwegOvergang()
+        public SpoorwegOvergang(int breedte, int grootte, int x, int y) : base(breedte, grootte, x, y)
         {
             throw new System.NotImplementedException();
         }

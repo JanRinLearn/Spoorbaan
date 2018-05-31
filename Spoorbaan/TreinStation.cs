@@ -11,7 +11,7 @@ namespace Spoorbaan
         private StationSein sein1;
         private StationSein sein2;
 
-        public TreinStation()
+        public TreinStation(int breedte, int grootte, int x, int y) : base(breedte, grootte, x, y)
         {
             throw new System.NotImplementedException();
         }

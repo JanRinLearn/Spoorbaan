@@ -17,7 +17,7 @@ namespace Spoorbaan
         protected int x;
         protected int y;
         protected LampStatus status;
-        protected SolidBrush sb = new SolidBrush(Color.LightGray);
+        protected SolidBrush sb = new SolidBrush(Color.DarkGray);
 
         //Default Lamp heeft altijd een x en y coordinaat nodig, maar de kleur en status kunnen default zijn.
         public Lamp(int x, int y)

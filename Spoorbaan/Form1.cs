@@ -22,9 +22,7 @@ namespace Spoorbaan
 
         private void TekenGrond_Paint(object sender, PaintEventArgs e)
         {
-            StationSein stationSein = new StationSein(10, 30, 100, 100);
-            Graphics g = e.Graphics;
-            stationSein.Teken(g);
+            
 
         }
 

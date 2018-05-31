@@ -76,7 +76,7 @@ namespace Spoorbaan
                     Assert.Equal(lamp.Sb.Color, Color.Red);
                     break;
                 case 3:
-                    Assert.Equal(lamp.Sb.Color, Color.Black);
+                    Assert.Equal(lamp.Sb.Color, Color.DarkGray);
                     break;
             }
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 
@@ -11,23 +12,32 @@ namespace Spoorbaan
         private int grootte;
         private int x;
         private int y;
+        private Orientatie orientatie;
 
-        public SpoorElement()
+        public SpoorElement(int breedte, int grootte, int x, int y, Orientatie orientatie)
         {
-            throw new System.NotImplementedException();
+            this.breedte = breedte;
+            this.grootte = grootte;
+            this.x = x;
+            this.y = y;
+            
         }
 
         public Orientatie Orientatie
         {
-            get => default(int);
+            get => orientatie;
             set
             {
+                value = orientatie;
             }
         }
 
-        public void Teken()
+        public virtual void Teken(Graphics g)
         {
-            throw new System.NotImplementedException();
+            SolidBrush sb = new SolidBrush(Color.LightGray);
+            Pen pen = new Pen(Color.Black);
+            g.FillRectangle(sb, x, y, 100, 100);
+            g.DrawRectangle(pen, x, y, 100, 100);
         }
     }
 }
