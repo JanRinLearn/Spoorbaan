@@ -9,15 +9,15 @@ namespace Spoorbaan
     public abstract class SpoorElement
     {
         protected int breedte, grootte, x, y;
-        private Orientatie orientatie;
+        protected Orientatie orientatie;
 
-        public SpoorElement(int breedte, int grootte, int x, int y, Orientatie orientatie)
+        public SpoorElement(int breedte, int grootte, int x, int y)
         {
             this.breedte = breedte;
             this.grootte = grootte;
             this.x = x;
             this.y = y;
-            this.orientatie = orientatie;
+            
             
         }
 

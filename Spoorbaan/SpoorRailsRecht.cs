@@ -10,9 +10,10 @@ namespace Spoorbaan
     {
         private const int RAILS_BREEDTE = 3;
 
-        public SpoorRailsRecht(int breedte, int grootte, int x, int y, Orientatie orientatie) : base(breedte, grootte, x, y, orientatie)
-        {
 
+        public SpoorRailsRecht(int breedte, int grootte, int x, int y, Orientatie orientatie) : base(breedte, grootte, x, y)
+        {
+            base.orientatie = orientatie;
         }
 
         public override void Teken(Graphics g)

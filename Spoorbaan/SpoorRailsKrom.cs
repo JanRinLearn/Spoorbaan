@@ -11,7 +11,7 @@ namespace Spoorbaan
         private const int RAILS_BREEDTE = 2;
         private RailRotatie rotatie;
 
-        public SpoorRailsKrom(int breedte, int grootte, int x, int y, Orientatie orientatie, RailRotatie rotatie) : base(breedte, grootte, x, y, orientatie)
+        public SpoorRailsKrom(int breedte, int grootte, int x, int y, RailRotatie rotatie) : base(breedte, grootte, x, y)
         {
             this.rotatie = rotatie;
         }
