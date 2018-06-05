@@ -9,7 +9,7 @@ namespace Spoorbaan
     {
         private List<SpoorElement> elementen;
 
-        public SpoorComponent(int breedte, int grootte, int x, int y): base (breedte, grootte, x, y)
+        public SpoorComponent(int breedte, int grootte, int x, int y, Orientatie orientatie) : base(breedte, grootte, x, y, orientatie)
         {
             throw new System.NotImplementedException();
         }

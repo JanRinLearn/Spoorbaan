@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 
@@ -7,17 +8,32 @@ namespace Spoorbaan
 {
     public class SpoorRailsKrom : SpoorElement
     {
-        private const int RAILS_BREEDTE = 1;
+        private const int RAILS_BREEDTE = 2;
         private RailRotatie rotatie;
 
-        public SpoorRailsKrom(int breedte, int grootte, int x, int y) : base(breedte, grootte, x, y)
+        public SpoorRailsKrom(int breedte, int grootte, int x, int y, Orientatie orientatie, RailRotatie rotatie) : base(breedte, grootte, x, y, orientatie)
         {
-            throw new System.NotImplementedException();
+            this.rotatie = rotatie;
         }
 
-        public void Teken()
+        public override void Teken(Graphics g)
         {
-            throw new System.NotImplementedException();
+            base.Teken(g);
+            Pen pen = new Pen(Color.Black, RAILS_BREEDTE);
+            switch (rotatie)
+            {
+                case RailRotatie._0:
+                    g.DrawArc(pen, x + 40, y + 100, 90, 90, 90, 90);
+                    break;
+                case RailRotatie._90:
+                    break;
+                case RailRotatie._180:
+                    break;
+                case RailRotatie._270:
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

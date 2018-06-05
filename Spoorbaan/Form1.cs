@@ -22,7 +22,9 @@ namespace Spoorbaan
 
         private void TekenGrond_Paint(object sender, PaintEventArgs e)
         {
-            
+            Graphics g = e.Graphics;
+            SpoorRailsKrom spoorRailsKrom = new SpoorRailsKrom(100, 100, 100, 100, Orientatie.Horizontaal, RailRotatie._0);
+            spoorRailsKrom.Teken(g);
 
         }
 
