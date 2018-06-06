@@ -20,7 +20,7 @@ namespace Spoorbaan
         {
             base.Teken(g);
             Pen pen = new Pen(Color.Black,RAILS_BREEDTE);
-            if (Orientatie == Orientatie.Horizontaal)
+            if (Orientatie == Orientatie.Verticaal)
             {
                 g.DrawLine(pen, x + 40, y, x + 40, y + 100);
                 g.DrawLine(pen, x + 60, y, x + 60, y + 100);
@@ -30,7 +30,7 @@ namespace Spoorbaan
                 g.DrawLine(pen, x + 40, y + 80, x + 60, y + 80);
 
             }
-            else if (Orientatie == Orientatie.Verticaal)
+            else if (Orientatie == Orientatie.Horizontaal)
             {
                 g.DrawLine(pen, x, y + 40, x + 100, y + 40);
                 g.DrawLine(pen, x, y + 60, x + 100, y + 60);
