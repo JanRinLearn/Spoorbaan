@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 
@@ -13,41 +14,42 @@ namespace Spoorbaan
 
         public TreinStation(int breedte, int grootte, int x, int y) : base(breedte, grootte, x, y)
         {
-            throw new System.NotImplementedException();
+            sein1 = new StationSein(breedte, grootte, x, y);
+            sein2 = new StationSein(breedte, grootte, x+90, y);
         }
 
         public StationSein Sein1
         {
-            get => default(StationSein);
+            get => sein1;
             set
             {
+                value = sein1;
             }
         }
 
         public StationSein Sein2
         {
-            get => default(StationSein);
+            get => sein2;
             set
             {
+                value = sein2;
             }
         }
 
         public StationSeinStatus StationSeinStatus
         {
-            get => default(StationSeinStatus);
-            set
-            {
-            }
+            get => status;
         }
 
-        public void SetStatus()
+        private void SetStatus(StationSeinStatus s)
         {
-            throw new System.NotImplementedException();
+            status = s;
         }
 
-        public void Teken()
+        public override void Teken(Graphics g)
         {
-            throw new System.NotImplementedException();
+            base.Teken(g);
+            
         }
     }
 }
