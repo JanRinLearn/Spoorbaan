@@ -14,8 +14,8 @@ namespace Spoorbaan
 
         public TreinStation(int breedte, int grootte, int x, int y) : base(breedte, grootte, x, y)
         {
-            sein1 = new StationSein(breedte, grootte, x, y);
-            sein2 = new StationSein(breedte, grootte, x+90, y);
+            sein1 = new StationSein(10, 30, x, y);
+            sein2 = new StationSein(10, 30, x+90, y);
         }
 
         public StationSein Sein1
@@ -44,11 +44,16 @@ namespace Spoorbaan
         private void SetStatus(StationSeinStatus s)
         {
             status = s;
+            
         }
 
         public override void Teken(Graphics g)
         {
             base.Teken(g);
+            Image image = Image.FromFile("images/station.png");
+            sein1.Teken(g);
+            sein2.Teken(g);
+            g.DrawImage(image, x, y, breedte, grootte);
             
         }
     }
