@@ -36,6 +36,7 @@ namespace Spoorbaan
         //zodra de juiste lampen aanstaan wordt de basis teken methode aangeroepen om het sein daadwerkelijk te tekenen
         public override void Teken(Graphics g)
         {
+            
             switch (status)
             {
                 case StationSeinStatus.Groen:

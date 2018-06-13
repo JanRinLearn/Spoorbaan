@@ -45,6 +45,7 @@ namespace Spoorbaan
         {
             status = s;
             
+            
         }
 
         public override void Teken(Graphics g)

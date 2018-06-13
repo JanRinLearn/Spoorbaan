@@ -23,7 +23,7 @@ namespace Spoorbaan
         private void TekenGrond_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            TreinStation treinStation = new TreinStation(100, 100, 100, 100);
+            SpoorwegOvergang treinStation = new SpoorwegOvergang(100, 100, 100, 100,Orientatie.Verticaal);
             treinStation.Teken(g);
 
         }
