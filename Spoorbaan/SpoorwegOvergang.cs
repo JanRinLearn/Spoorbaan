@@ -51,7 +51,8 @@ namespace Spoorbaan
         }
 
         //Ik veronschuldig mij alvast voor de lengte van deze methode.
-        //De reden waarom ik 
+        //De reden waarom ik arrays maak met daarin alle individuele delen van de spoorboom is zodat ik zeker weet dat er geen fouten onstaan bij het tekenen
+        //Oorsprokelijk was het idee om een lange witte rechthoek te tekenen, en vervolgens de rode rechthoeken eroverheen te tekenen.
         public override void Teken(Graphics g)
         {
             base.Teken(g);
@@ -120,6 +121,48 @@ namespace Spoorbaan
                 else
                 {
                     rails = 10;
+                    Rectangle[] rectanglesUp =
+                    {
+                    new Rectangle(x + 20, y + 5, 5, 5),
+                    new Rectangle(x + 25, y + 5, 5, 5),
+                    new Rectangle(x + 30, y + 5, 5, 5),
+                    new Rectangle(x + 35, y + 5, 5, 5),
+                    new Rectangle(x + 40, y + 5, 5, 5),
+                    new Rectangle(x + 45, y + 5, 5, 5),
+                    new Rectangle(x + 50, y + 5, 5, 5),
+                    new Rectangle(x + 55, y + 5, 5, 5),
+                    new Rectangle(x + 60, y + 5, 5, 5),
+                    new Rectangle(x + 65, y + 5, 5, 5),
+                    };
+
+                    Rectangle[] rectanglesDown =
+                    {
+                    new Rectangle(x + 30, y + 90, 5, 5),
+                    new Rectangle(x + 35, y + 90, 5, 5),
+                    new Rectangle(x + 40, y + 90, 5, 5),
+                    new Rectangle(x + 45, y + 90, 5, 5),
+                    new Rectangle(x + 50, y + 90, 5, 5),
+                    new Rectangle(x + 55, y + 90, 5, 5),
+                    new Rectangle(x + 60, y + 90, 5, 5),
+                    new Rectangle(x + 65, y + 90, 5, 5),
+                    new Rectangle(x + 70, y + 90, 5, 5),
+                    new Rectangle(x + 75, y + 90, 5, 5),
+                    };
+                    for (int i = 0; i < rails; i++)
+                    {
+                        if (i % 2 == 0)
+                        {
+                            brush.Color = Color.Red;
+                            g.FillRectangle(brush, rectanglesUp[i]);
+                            g.FillRectangle(brush, rectanglesDown[i]);
+                        }
+                        else
+                        {
+                            brush.Color = Color.White;
+                            g.FillRectangle(brush, rectanglesUp[i]);
+                            g.FillRectangle(brush, rectanglesDown[i]);
+                        }
+                    }
                 }
 
             }

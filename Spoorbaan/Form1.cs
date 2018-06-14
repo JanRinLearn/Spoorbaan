@@ -26,6 +26,9 @@ namespace Spoorbaan
             SpoorwegOvergang treinStation = new SpoorwegOvergang(100, 100, 100, 100,Orientatie.Verticaal);
             treinStation.Teken(g);
 
+            SpoorwegOvergang spoorweg = new SpoorwegOvergang(100, 100, 200, 200, Orientatie.Horizontaal);
+            spoorweg.Teken(g);
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
