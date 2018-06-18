@@ -11,7 +11,7 @@ namespace Spoorbaan
         private int rails;
         private SpoorwegOvergangSein sein1;
         private SpoorwegOvergangSein sein2;
-        private OvergangSeinStatus status = OvergangSeinStatus.Aan;
+        private OvergangSeinStatus status = OvergangSeinStatus.Uit;
 
         public SpoorwegOvergang(int breedte, int grootte, int x, int y, Orientatie orientatie) : base(breedte, grootte, x, y)
         {
@@ -41,6 +41,10 @@ namespace Spoorbaan
         public OvergangSeinStatus Status
         {
             get => status;
+            set
+            {
+                SetStatus(value);
+            }
 
         }
 
@@ -56,12 +60,15 @@ namespace Spoorbaan
         public override void Teken(Graphics g)
         {
             base.Teken(g);
+            sein1.Status = status;
+            sein2.Status = status;
             sein1.Teken(g);
             sein2.Teken(g);
 
 
             if (status == OvergangSeinStatus.Aan)
             {
+                
                 SolidBrush brush = new SolidBrush(Color.White);
                 if (orientatie == Orientatie.Verticaal)
                 {

@@ -24,6 +24,10 @@ namespace Spoorbaan
         public OvergangSeinStatus Status
         {
             get => status;
+            set
+            {
+                SetStatus(value);
+            }
         }
 
         private void SetStatus(OvergangSeinStatus s)

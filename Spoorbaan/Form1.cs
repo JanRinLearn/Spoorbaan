@@ -24,6 +24,7 @@ namespace Spoorbaan
         {
             Graphics g = e.Graphics;
             SpoorwegOvergang treinStation = new SpoorwegOvergang(100, 100, 100, 100,Orientatie.Verticaal);
+            treinStation.Status = OvergangSeinStatus.Aan;
             treinStation.Teken(g);
 
             SpoorwegOvergang spoorweg = new SpoorwegOvergang(100, 100, 200, 200, Orientatie.Horizontaal);

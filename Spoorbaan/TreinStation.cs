@@ -39,13 +39,15 @@ namespace Spoorbaan
         public StationSeinStatus StationSeinStatus
         {
             get => status;
+            set
+            {
+                SetStatus(value);
+            }
         }
 
         private void SetStatus(StationSeinStatus s)
         {
             status = s;
-            
-            
         }
 
         public override void Teken(Graphics g)

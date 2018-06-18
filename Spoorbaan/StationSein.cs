@@ -25,6 +25,10 @@ namespace Spoorbaan
         public StationSeinStatus Status
         {
             get => status;
+            set
+            {
+                SetStatus(value);
+            }
         }
         
         private void SetStatus(StationSeinStatus s)
