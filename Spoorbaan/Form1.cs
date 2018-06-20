@@ -19,7 +19,8 @@ namespace Spoorbaan
             InitializeComponent();
 
         }
-
+        //De scherm resolutie van mijn laptop, wat mijn actieve werkcomputer is voor deze opdracht, is 1386 bij 788.
+        //Dit zorgt ervoor dat ik niet het venster groter kan maken dan deze resolutie.
         private void TekenGrond_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
