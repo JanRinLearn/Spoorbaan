@@ -50,10 +50,32 @@ namespace Spoorbaan
             status = s;
         }
 
+        
         public override void Teken(Graphics g)
         {
             base.Teken(g);
             Image image = Image.FromFile("images/station.png");
+            switch (status)
+            {
+                case StationSeinStatus.Groen:
+                    sein1.Status = StationSeinStatus.Groen;
+                    sein2.Status = StationSeinStatus.Rood;
+                    break;
+                case StationSeinStatus.Rood:
+                    sein1.Status = StationSeinStatus.Rood;
+                    sein2.Status = StationSeinStatus.Groen;
+                    break;
+                case StationSeinStatus.Uit:
+                    sein1.Status = StationSeinStatus.Uit;
+                    sein2.Status = StationSeinStatus.Uit;
+                    break;
+                case StationSeinStatus.Storing:
+                    sein1.Status = StationSeinStatus.Storing;
+                    sein2.Status = StationSeinStatus.Storing;
+                    break;
+                default:
+                    break;
+            }
             sein1.Teken(g);
             sein2.Teken(g);
             g.DrawImage(image, x, y, breedte, grootte);

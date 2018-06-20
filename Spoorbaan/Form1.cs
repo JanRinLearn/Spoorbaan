@@ -23,12 +23,12 @@ namespace Spoorbaan
         private void TekenGrond_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            SpoorwegOvergang treinStation = new SpoorwegOvergang(100, 100, 100, 100,Orientatie.Verticaal);
-            treinStation.Status = OvergangSeinStatus.Aan;
+            TreinStation treinStation = new TreinStation(100, 100, 100, 100);
+            treinStation.StationSeinStatus = StationSeinStatus.Groen;
+            TreinStation station = new TreinStation(100, 100, 200, 100);
+            station.StationSeinStatus = StationSeinStatus.Rood;
             treinStation.Teken(g);
-
-            SpoorwegOvergang spoorweg = new SpoorwegOvergang(100, 100, 200, 200, Orientatie.Horizontaal);
-            spoorweg.Teken(g);
+            station.Teken(g);
 
         }
 

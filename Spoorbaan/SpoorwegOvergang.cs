@@ -75,26 +75,24 @@ namespace Spoorbaan
                     rails = 14;
                     Rectangle[] rectanglesLeft =
                     {
-                    new Rectangle(x + 10, y + 10, 5, 5),
-                    new Rectangle(x + 10, y + 15, 5, 5),
-                    new Rectangle(x + 10, y + 20, 5, 5),
-                    new Rectangle(x + 10, y + 25, 5, 5),
-                    new Rectangle(x + 10, y + 30, 5, 5),
-                    new Rectangle(x + 10, y + 35, 5, 5),
-                    new Rectangle(x + 10, y + 40, 5, 5),
-                    new Rectangle(x + 10, y + 45, 5, 5),
-                    new Rectangle(x + 10, y + 50, 5, 5),
-                    new Rectangle(x + 10, y + 55, 5, 5),
-                    new Rectangle(x + 10, y + 60, 5, 5),
-                    new Rectangle(x + 10, y + 65, 5, 5),
-                    new Rectangle(x + 10, y + 70, 5, 5),
-                    new Rectangle(x + 10, y + 75, 5, 5),
+                    new Rectangle(x + 15, y + 10, 5, 5),
+                    new Rectangle(x + 15, y + 15, 5, 5),
+                    new Rectangle(x + 15, y + 20, 5, 5),
+                    new Rectangle(x + 15, y + 25, 5, 5),
+                    new Rectangle(x + 15, y + 30, 5, 5),
+                    new Rectangle(x + 15, y + 35, 5, 5),
+                    new Rectangle(x + 15, y + 40, 5, 5),
+                    new Rectangle(x + 15, y + 45, 5, 5),
+                    new Rectangle(x + 15, y + 50, 5, 5),
+                    new Rectangle(x + 15, y + 55, 5, 5),
+                    new Rectangle(x + 15, y + 60, 5, 5),
+                    new Rectangle(x + 15, y + 65, 5, 5),
+                    new Rectangle(x + 15, y + 70, 5, 5),
+                    new Rectangle(x + 15, y + 75, 5, 5),
                     };
 
                     Rectangle[] rectanglesRight =
                     {
-                    new Rectangle(x + 80, y + 10, 5, 5),
-                    new Rectangle(x + 80, y + 15, 5, 5),
                     new Rectangle(x + 80, y + 20, 5, 5),
                     new Rectangle(x + 80, y + 25, 5, 5),
                     new Rectangle(x + 80, y + 30, 5, 5),
@@ -107,6 +105,8 @@ namespace Spoorbaan
                     new Rectangle(x + 80, y + 65, 5, 5),
                     new Rectangle(x + 80, y + 70, 5, 5),
                     new Rectangle(x + 80, y + 75, 5, 5),
+                    new Rectangle(x + 80, y + 80, 5, 5),
+                    new Rectangle(x + 80, y + 85, 5, 5),
                     };
                     for (int i = 0; i < rails; i++)
                     {
