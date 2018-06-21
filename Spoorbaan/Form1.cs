@@ -24,12 +24,8 @@ namespace Spoorbaan
         private void TekenGrond_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            TreinStation treinStation = new TreinStation(100, 100, 100, 100);
-            treinStation.StationSeinStatus = StationSeinStatus.Groen;
-            TreinStation station = new TreinStation(100, 100, 200, 100);
-            station.StationSeinStatus = StationSeinStatus.Rood;
-            treinStation.Teken(g);
-            station.Teken(g);
+            Spoorbaan spoorbaan = new Spoorbaan(100, 100, 2, 1, 1000, 1000);
+            spoorbaan.Teken(g);
 
         }
 

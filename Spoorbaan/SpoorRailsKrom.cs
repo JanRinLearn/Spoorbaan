@@ -24,19 +24,19 @@ namespace Spoorbaan
             {
                 
                 case RailRotatie._0:
-                    g.DrawArc(pen, x + 50, y + 50, 100, 100, 180, 90);
+                    g.DrawArc(pen, x + 60, y + 60, 90, 90, 180, 90);
                     g.DrawArc(pen, x + 40, y + 40, 120, 120, 180, 90);
                     break;
                 case RailRotatie._90:
-                    g.DrawArc(pen, x - 50, y + 50, 100, 100, 270, 90);
+                    g.DrawArc(pen, x - 50, y + 60, 90, 90, 270, 90);
                     g.DrawArc(pen, x - 60, y + 40, 120, 120, 270, 90);
                     break;
                 case RailRotatie._180:
-                    g.DrawArc(pen, x - 50, y - 50, 100, 100, 0, 90);
+                    g.DrawArc(pen, x - 50, y - 50, 90, 90, 0, 90);
                     g.DrawArc(pen, x - 60, y - 60, 120, 120, 0, 90);
                     break;
                 case RailRotatie._270:
-                    g.DrawArc(pen, x + 50, y - 50, 100, 100, 90, 90);
+                    g.DrawArc(pen, x + 60, y - 50, 90, 90, 90, 90);
                     g.DrawArc(pen, x + 40, y - 60, 120, 120, 90, 90);
                     break;
                 default:

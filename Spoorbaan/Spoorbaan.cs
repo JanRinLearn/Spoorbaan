@@ -50,26 +50,53 @@ namespace Spoorbaan
             //Maken van de elementen
             TreinStation trein = new TreinStation(breedte, hoogte, 200, 400);
             SpoorwegOvergang spoorweg1 = new SpoorwegOvergang(breedte, hoogte, 400, 400, Orientatie.Horizontaal);
-            SpoorwegOvergang spoorweg2 = new SpoorwegOvergang(breedte, hoogte, 500, 100, Orientatie.Verticaal);
-            SpoorRailsRecht recht1 = new SpoorRailsRecht(breedte, hoogte, 200, 0, Orientatie.Horizontaal);
-            SpoorRailsRecht recht2 = new SpoorRailsRecht(breedte, hoogte, 300, 0, Orientatie.Horizontaal);
-            SpoorRailsRecht recht3 = new SpoorRailsRecht(breedte, hoogte, 400, 0, Orientatie.Horizontaal);
-            SpoorRailsRecht recht4 = new SpoorRailsRecht(breedte, hoogte, 500, 0, Orientatie.Horizontaal);
+            SpoorwegOvergang spoorweg2 = new SpoorwegOvergang(breedte, hoogte, 600, 100, Orientatie.Verticaal);
+            SpoorRailsRecht rechtH1 = new SpoorRailsRecht(breedte, hoogte, 200, 0, Orientatie.Horizontaal);
+            SpoorRailsRecht rechtH2 = new SpoorRailsRecht(breedte, hoogte, 300, 0, Orientatie.Horizontaal);
+            SpoorRailsRecht rechtH3 = new SpoorRailsRecht(breedte, hoogte, 400, 0, Orientatie.Horizontaal);
+            SpoorRailsRecht rechtH4 = new SpoorRailsRecht(breedte, hoogte, 500, 0, Orientatie.Horizontaal);
+            SpoorRailsRecht rechtH5 = new SpoorRailsRecht(breedte, hoogte, 100, 400, Orientatie.Horizontaal);
+            SpoorRailsRecht rechtH6 = new SpoorRailsRecht(breedte, hoogte, 300, 400, Orientatie.Horizontaal);
+            SpoorRailsRecht rechtV1 = new SpoorRailsRecht(breedte, hoogte, 100, 100, Orientatie.Verticaal);
+            SpoorRailsRecht rechtV2 = new SpoorRailsRecht(breedte, hoogte, 100, 200, Orientatie.Verticaal);
+            SpoorRailsRecht rechtV3 = new SpoorRailsRecht(breedte, hoogte, 500, 300, Orientatie.Verticaal);
+            SpoorRailsKrom krom0G1 = new SpoorRailsKrom(breedte, hoogte, 0, 300, RailRotatie._0);
+            SpoorRailsKrom krom0G2 = new SpoorRailsKrom(breedte, hoogte, 500, 200, RailRotatie._0);
+            SpoorRailsKrom krom0G3 = new SpoorRailsKrom(breedte, hoogte, 100, 0, RailRotatie._0);
+            SpoorRailsKrom krom90G1 = new SpoorRailsKrom(breedte, hoogte, 600, 0, RailRotatie._90);
+            SpoorRailsKrom krom180G1 = new SpoorRailsKrom(breedte, hoogte, 600, 200, RailRotatie._180);
+            SpoorRailsKrom krom180G2 = new SpoorRailsKrom(breedte, hoogte, 100, 300, RailRotatie._180);
+            SpoorRailsKrom krom180G3 = new SpoorRailsKrom(breedte, hoogte, 500, 400, RailRotatie._180);
+            SpoorRailsKrom krom270G1 = new SpoorRailsKrom(breedte, hoogte, 0, 400, RailRotatie._270);
 
             //Toevoegen aan de lijst
             elementen.Add(trein);
             elementen.Add(spoorweg1);
             elementen.Add(spoorweg2);
-            elementen.Add(recht1);
-            elementen.Add(recht2);
-            elementen.Add(recht3);
-            elementen.Add(recht4);
-
+            elementen.Add(rechtH1);
+            elementen.Add(rechtH2);
+            elementen.Add(rechtH3);
+            elementen.Add(rechtH4);
+            elementen.Add(rechtH5);
+            elementen.Add(rechtH6);
+            elementen.Add(rechtV1);
+            elementen.Add(rechtV2);
+            elementen.Add(rechtV3);
+            elementen.Add(krom0G1);
+            elementen.Add(krom0G2);
+            elementen.Add(krom0G3);
+            elementen.Add(krom90G1);
+            elementen.Add(krom180G1);
+            elementen.Add(krom180G2);
+            elementen.Add(krom180G3);
+            elementen.Add(krom270G1);
 
         }
 
         public void Teken(Graphics g)
         {
+            SolidBrush sb = new SolidBrush(Color.Pink);
+            g.FillRectangle(sb, 0, 0, x, y);
             foreach (SpoorElement e in elementen)
             {
                 e.Teken(g);
