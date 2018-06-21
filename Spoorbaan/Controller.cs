@@ -13,7 +13,7 @@ namespace Spoorbaan
 
         public Controller()
         {
-            throw new System.NotImplementedException();
+            this.spoorbaan = new Spoorbaan(100, 100, 2, 1, 1000, 1000);
         }
 
         private void overgangTimer_Elapsed()
