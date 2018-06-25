@@ -13,7 +13,7 @@ namespace Spoorbaan
     public partial class Form1 : Form
     {
 
-
+        
         public Form1()
         {
             InitializeComponent();
@@ -24,14 +24,20 @@ namespace Spoorbaan
         private void TekenGrond_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            Spoorbaan spoorbaan = new Spoorbaan(100, 100, 2, 1, 1000, 1000);
+            Spoorbaan spoorbaan = new Spoorbaan(100, 100, 1000, 1000);
             spoorbaan.Teken(g);
+            Controller controller = new Controller(spoorbaan);
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void overgang1_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void storing_CheckedChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

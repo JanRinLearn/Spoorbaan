@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Spoorbaan
 {
     public class Controller
     {
-        private int overgangTimer;
-        private int storingTimer;
+        private Timer overgangTimer = new Timer();
+        private Timer storingTimer = new Timer();
         private Spoorbaan spoorbaan;
 
-        public Controller()
+        public Controller(Spoorbaan spoorbaan)
         {
-            this.spoorbaan = new Spoorbaan(100, 100, 2, 1, 1000, 1000);
+            this.spoorbaan = spoorbaan;
         }
 
         private void overgangTimer_Elapsed()
@@ -41,9 +43,17 @@ namespace Spoorbaan
             throw new System.NotImplementedException();
         }
 
-        public void ZetStoring()
+        public void ZetStoring(Graphics g)
         {
-            throw new System.NotImplementedException();
+            foreach (SpoorwegOvergang Overgang in spoorbaan.Overgangen)
+            {
+                Overgang.Status = OvergangSeinStatus.Storing;
+            }
+            foreach (TreinStation Overgang in spoorbaan.Stations)
+            {
+                Overgang.StationSeinStatus = StationSeinStatus.Storing;
+            }
+            spoorbaan.Teken(g)
         }
     }
 }

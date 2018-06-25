@@ -28,23 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.TekenGrond = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.stationRecht = new System.Windows.Forms.CheckBox();
+            this.stationLinks = new System.Windows.Forms.CheckBox();
+            this.overgang2 = new System.Windows.Forms.CheckBox();
+            this.overgang1 = new System.Windows.Forms.CheckBox();
             this.storing = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.TekenGrond.SuspendLayout();
             this.SuspendLayout();
             // 
             // TekenGrond
             // 
-            this.TekenGrond.Controls.Add(this.checkBox4);
-            this.TekenGrond.Controls.Add(this.checkBox3);
-            this.TekenGrond.Controls.Add(this.checkBox2);
-            this.TekenGrond.Controls.Add(this.checkBox1);
+            this.TekenGrond.Controls.Add(this.stationRecht);
+            this.TekenGrond.Controls.Add(this.stationLinks);
+            this.TekenGrond.Controls.Add(this.overgang2);
+            this.TekenGrond.Controls.Add(this.overgang1);
             this.TekenGrond.Controls.Add(this.storing);
             this.TekenGrond.Location = new System.Drawing.Point(13, 13);
             this.TekenGrond.Name = "TekenGrond";
@@ -52,10 +50,46 @@
             this.TekenGrond.TabIndex = 0;
             this.TekenGrond.Paint += new System.Windows.Forms.PaintEventHandler(this.TekenGrond_Paint);
             // 
-            // timer1
+            // stationRecht
             // 
-            this.timer1.Interval = 2000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.stationRecht.AutoSize = true;
+            this.stationRecht.Location = new System.Drawing.Point(17, 198);
+            this.stationRecht.Name = "stationRecht";
+            this.stationRecht.Size = new System.Drawing.Size(123, 17);
+            this.stationRecht.TabIndex = 4;
+            this.stationRecht.Text = "Station Recht Groen";
+            this.stationRecht.UseVisualStyleBackColor = true;
+            // 
+            // stationLinks
+            // 
+            this.stationLinks.AutoSize = true;
+            this.stationLinks.Location = new System.Drawing.Point(17, 174);
+            this.stationLinks.Name = "stationLinks";
+            this.stationLinks.Size = new System.Drawing.Size(119, 17);
+            this.stationLinks.TabIndex = 3;
+            this.stationLinks.Text = "Station Links Groen";
+            this.stationLinks.UseVisualStyleBackColor = true;
+            // 
+            // overgang2
+            // 
+            this.overgang2.AutoSize = true;
+            this.overgang2.Location = new System.Drawing.Point(17, 109);
+            this.overgang2.Name = "overgang2";
+            this.overgang2.Size = new System.Drawing.Size(82, 17);
+            this.overgang2.TabIndex = 2;
+            this.overgang2.Text = "Overgang 2";
+            this.overgang2.UseVisualStyleBackColor = true;
+            // 
+            // overgang1
+            // 
+            this.overgang1.AutoSize = true;
+            this.overgang1.Location = new System.Drawing.Point(17, 86);
+            this.overgang1.Name = "overgang1";
+            this.overgang1.Size = new System.Drawing.Size(82, 17);
+            this.overgang1.TabIndex = 1;
+            this.overgang1.Text = "Overgang 1";
+            this.overgang1.UseVisualStyleBackColor = true;
+            this.overgang1.CheckedChanged += new System.EventHandler(this.overgang1_CheckedChanged);
             // 
             // storing
             // 
@@ -66,46 +100,7 @@
             this.storing.TabIndex = 0;
             this.storing.Text = "Storing";
             this.storing.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(17, 86);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(17, 109);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(80, 17);
-            this.checkBox2.TabIndex = 2;
-            this.checkBox2.Text = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(17, 174);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(80, 17);
-            this.checkBox3.TabIndex = 3;
-            this.checkBox3.Text = "checkBox3";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(17, 198);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(80, 17);
-            this.checkBox4.TabIndex = 4;
-            this.checkBox4.Text = "checkBox4";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.storing.CheckedChanged += new System.EventHandler(this.storing_CheckedChanged);
             // 
             // Form1
             // 
@@ -114,7 +109,7 @@
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.TekenGrond);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Spoorbaan";
             this.TekenGrond.ResumeLayout(false);
             this.TekenGrond.PerformLayout();
             this.ResumeLayout(false);
@@ -124,11 +119,10 @@
         #endregion
 
         private System.Windows.Forms.Panel TekenGrond;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox stationRecht;
+        private System.Windows.Forms.CheckBox stationLinks;
+        private System.Windows.Forms.CheckBox overgang2;
+        private System.Windows.Forms.CheckBox overgang1;
         private System.Windows.Forms.CheckBox storing;
     }
 }

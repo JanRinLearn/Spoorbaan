@@ -10,24 +10,22 @@ namespace Spoorbaan
     {
         private int breedte;
         private int hoogte;
-        private int overgangen;
-        private int stations;
+        private List<SpoorwegOvergang> overgangen = new List<SpoorwegOvergang>();
+        private List<TreinStation> stations = new List<TreinStation>();
         private int x;
         private int y;
         private List<SpoorElement> elementen = new List<SpoorElement>();
 
-        public Spoorbaan(int breedte, int hoogte, int overgangen, int stations, int x, int y)
+        public Spoorbaan(int breedte, int hoogte,int x, int y)
         {
             this.breedte = breedte;
             this.hoogte = hoogte;
-            this.overgangen = overgangen;
-            this.stations = stations;
             this.x = x;
             this.y = y;
             MaakSpoorbaan();
         }
 
-        public int Overgangen
+        public List<SpoorwegOvergang> Overgangen
         {
             get => overgangen;
             set
@@ -36,7 +34,7 @@ namespace Spoorbaan
             }
         }
 
-        public int Stations
+        public List<TreinStation> Stations
         {
             get => stations;
             set
@@ -90,6 +88,9 @@ namespace Spoorbaan
             elementen.Add(krom180G2);
             elementen.Add(krom180G3);
             elementen.Add(krom270G1);
+            stations.Add(trein);
+            overgangen.Add(spoorweg1);
+            overgangen.Add(spoorweg2);
 
         }
 
