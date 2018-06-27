@@ -16,6 +16,7 @@ namespace Spoorbaan
         public Controller(Spoorbaan spoorbaan)
         {
             this.spoorbaan = spoorbaan;
+            
         }
 
         private void overgangTimer_Elapsed()
@@ -40,10 +41,13 @@ namespace Spoorbaan
 
         public void ZetSpoorwegStatus()
         {
-            throw new System.NotImplementedException();
+            foreach (SpoorwegOvergang Overgang in spoorbaan.Overgangen)
+            {
+                Overgang.Status = OvergangSeinStatus.Aan;
+            }
         }
 
-        public void ZetStoring(Graphics g)
+        public void ZetStoring()
         {
             foreach (SpoorwegOvergang Overgang in spoorbaan.Overgangen)
             {
@@ -53,7 +57,7 @@ namespace Spoorbaan
             {
                 Overgang.StationSeinStatus = StationSeinStatus.Storing;
             }
-            spoorbaan.Teken(g)
+            
         }
     }
 }

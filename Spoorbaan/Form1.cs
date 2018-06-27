@@ -12,22 +12,29 @@ namespace Spoorbaan
 {
     public partial class Form1 : Form
     {
-
-        
+        Graphics g;
+        Spoorbaan spoorbaan;
+        Controller controller;
         public Form1()
         {
             InitializeComponent();
-
+            g = TekenGrond.CreateGraphics();
         }
         //De scherm resolutie van mijn laptop, wat mijn actieve werkcomputer is voor deze opdracht, is 1386 bij 788.
         //Dit zorgt ervoor dat ik niet het venster groter kan maken dan deze resolutie.
         private void TekenGrond_Paint(object sender, PaintEventArgs e)
         {
-            Graphics g = e.Graphics;
-            Spoorbaan spoorbaan = new Spoorbaan(100, 100, 1000, 1000);
+            if (spoorbaan == null && controller == null)
+            {
+                spoorbaan = new Spoorbaan(100, 100, 1000, 1000);
+                controller = new Controller(spoorbaan);
+            }
             spoorbaan.Teken(g);
-            Controller controller = new Controller(spoorbaan);
+        }
 
+        private void TekenGrond_Ververs()
+        {
+            spoorbaan.Teken(g);
         }
 
         private void overgang1_CheckedChanged(object sender, EventArgs e)
@@ -37,7 +44,13 @@ namespace Spoorbaan
 
         private void storing_CheckedChanged(object sender, EventArgs e)
         {
-            
+            if (storing.Checked)
+            {
+                controller.ZetStoring();
+            }
+            TekenGrond_Ververs();
         }
+
+        
     }
 }

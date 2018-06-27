@@ -37,11 +37,25 @@ namespace Spoorbaan
         //Wordt nog verder aangepast, is nog niet volledig klaar.
         public override void Teken(Graphics g)
         {
-            if (status == OvergangSeinStatus.Aan)
+            switch (status)
             {
-                Lamp1.Status = LampStatus.Aan;
-                Lamp2.Status = LampStatus.Uit;
+                case OvergangSeinStatus.Aan:
+                    Lamp1.Status = LampStatus.Aan;
+                    Lamp2.Status = LampStatus.Uit;
+                    break;
+                case OvergangSeinStatus.Uit:
+                    Lamp1.Status = LampStatus.Uit;
+                    Lamp2.Status = LampStatus.Uit;
+                    break;
+                case OvergangSeinStatus.Storing:
+                    Lamp1.Status = LampStatus.Aan;
+                    Lamp2.Status = LampStatus.Aan;
+                    break;
+                default:
+                    break;
             }
+            
+            
             base.Teken(g);
             
         }
