@@ -46,7 +46,11 @@ namespace Spoorbaan
         {
             if (storing.Checked)
             {
-                controller.ZetStoring();
+                controller.ZetStoring(true);
+            }
+            else
+            {
+                controller.ZetStoring(false);
             }
             TekenGrond_Ververs();
         }

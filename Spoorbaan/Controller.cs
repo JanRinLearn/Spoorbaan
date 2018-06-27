@@ -16,7 +16,7 @@ namespace Spoorbaan
         public Controller(Spoorbaan spoorbaan)
         {
             this.spoorbaan = spoorbaan;
-            
+
         }
 
         private void overgangTimer_Elapsed()
@@ -47,17 +47,31 @@ namespace Spoorbaan
             }
         }
 
-        public void ZetStoring()
+        public void ZetStoring(bool actief)
         {
-            foreach (SpoorwegOvergang Overgang in spoorbaan.Overgangen)
+            if (actief)
             {
-                Overgang.Status = OvergangSeinStatus.Storing;
+                foreach (SpoorwegOvergang Overgang in spoorbaan.Overgangen)
+                {
+                    Overgang.Status = OvergangSeinStatus.Storing;
+                }
+                foreach (TreinStation Overgang in spoorbaan.Stations)
+                {
+                    Overgang.StationSeinStatus = StationSeinStatus.Storing;
+                }
             }
-            foreach (TreinStation Overgang in spoorbaan.Stations)
+            else
             {
-                Overgang.StationSeinStatus = StationSeinStatus.Storing;
+                foreach (SpoorwegOvergang Overgang in spoorbaan.Overgangen)
+                {
+                    Overgang.Status = OvergangSeinStatus.Uit;
+                }
+                foreach (TreinStation Overgang in spoorbaan.Stations)
+                {
+                    Overgang.StationSeinStatus = StationSeinStatus.Groen;
+                }
             }
-            
+
         }
     }
 }

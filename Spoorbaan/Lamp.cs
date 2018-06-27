@@ -85,6 +85,7 @@ namespace Spoorbaan
             }
             else
             {
+                sb.Color = Color.DarkGray;
                 g.FillEllipse(sb, x, y, STRAAL, STRAAL);
                 
             }
