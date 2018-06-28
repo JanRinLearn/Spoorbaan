@@ -48,13 +48,6 @@ namespace Spoorbaan
         private void SetStatus(StationSeinStatus s)
         {
             status = s;
-        }
-
-        
-        public override void Teken(Graphics g)
-        {
-            base.Teken(g);
-            Image image = Image.FromFile("images/station.png");
             switch (status)
             {
                 case StationSeinStatus.Groen:
@@ -76,6 +69,13 @@ namespace Spoorbaan
                 default:
                     break;
             }
+        }
+
+        
+        public override void Teken(Graphics g)
+        {
+            base.Teken(g);
+            Image image = Image.FromFile("images/station.png");
             sein1.Teken(g);
             sein2.Teken(g);
             g.DrawImage(image, x, y, breedte, grootte);

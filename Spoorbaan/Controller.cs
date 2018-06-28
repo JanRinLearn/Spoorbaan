@@ -70,10 +70,7 @@ namespace Spoorbaan
 
         public void ZetSpoorwegStatus()
         {
-            foreach (SpoorwegOvergang Overgang in spoorbaan.Overgangen)
-            {
-                Overgang.Status = OvergangSeinStatus.Aan;
-            }
+            throw new System.NotImplementedException();
         }
 
         public void ZetStoring(bool actief)

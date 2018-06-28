@@ -39,7 +39,7 @@ namespace Spoorbaan
 
         private void overgang1_CheckedChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void storing_CheckedChanged(object sender, EventArgs e)
