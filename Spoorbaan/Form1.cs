@@ -27,7 +27,7 @@ namespace Spoorbaan
             if (spoorbaan == null && controller == null)
             {
                 spoorbaan = new Spoorbaan(100, 100, 1000, 1000);
-                controller = new Controller(spoorbaan);
+                controller = new Controller(spoorbaan,overgangTimer,storingTimer, g);
             }
             spoorbaan.Teken(g);
         }
@@ -47,10 +47,12 @@ namespace Spoorbaan
             if (storing.Checked)
             {
                 controller.ZetStoring(true);
+                
             }
             else
             {
                 controller.ZetStoring(false);
+                
             }
             TekenGrond_Ververs();
         }

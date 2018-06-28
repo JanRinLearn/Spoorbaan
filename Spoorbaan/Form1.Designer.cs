@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TekenGrond = new System.Windows.Forms.Panel();
             this.stationRecht = new System.Windows.Forms.CheckBox();
             this.stationLinks = new System.Windows.Forms.CheckBox();
             this.overgang2 = new System.Windows.Forms.CheckBox();
             this.overgang1 = new System.Windows.Forms.CheckBox();
             this.storing = new System.Windows.Forms.CheckBox();
+            this.overgangTimer = new System.Windows.Forms.Timer(this.components);
+            this.storingTimer = new System.Windows.Forms.Timer(this.components);
             this.TekenGrond.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,6 +105,14 @@
             this.storing.UseVisualStyleBackColor = true;
             this.storing.CheckedChanged += new System.EventHandler(this.storing_CheckedChanged);
             // 
+            // overgangTimer
+            // 
+            this.overgangTimer.Interval = 1000;
+            // 
+            // storingTimer
+            // 
+            this.storingTimer.Interval = 1000;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,6 +135,8 @@
         private System.Windows.Forms.CheckBox overgang2;
         private System.Windows.Forms.CheckBox overgang1;
         private System.Windows.Forms.CheckBox storing;
+        private System.Windows.Forms.Timer overgangTimer;
+        private System.Windows.Forms.Timer storingTimer;
     }
 }
 
