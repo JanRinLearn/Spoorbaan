@@ -15,6 +15,7 @@ namespace Spoorbaan
         Graphics g;
         Spoorbaan spoorbaan;
         Controller controller;
+        bool overgangLinks, overgangRechts, station = false;
         public Form1()
         {
             InitializeComponent();
@@ -37,9 +38,30 @@ namespace Spoorbaan
             spoorbaan.Teken(g);
         }
 
-        private void overgang1_CheckedChanged(object sender, EventArgs e)
+        private void overgang2_Click(object sender, EventArgs e)
         {
-            
+            if (overgangRechts)
+            {
+                overgangRechts = false;
+            }
+            else
+            {
+                overgangRechts = true;
+            }
+            controller.ZetSpoorwegStatus(overgangLinks, overgangRechts, station);
+        }
+
+        private void stationButton_Click(object sender, EventArgs e)
+        {
+            if (station)
+            {
+                station = false;
+            }
+            else
+            {
+                station = true;
+            }
+            controller.ZetSpoorwegStatus(overgangLinks, overgangRechts, station);
         }
 
         private void storing_CheckedChanged(object sender, EventArgs e)
@@ -57,6 +79,17 @@ namespace Spoorbaan
             TekenGrond_Ververs();
         }
 
-        
+        private void overgang1_Click(object sender, EventArgs e)
+        {
+            if (overgangLinks)
+            {
+                overgangLinks = false;
+            }
+            else
+            {
+                overgangLinks = true;
+            }
+            controller.ZetSpoorwegStatus(overgangLinks,overgangRechts,station);
+        }
     }
 }

@@ -66,7 +66,7 @@ namespace Spoorbaan
             sein2.Teken(g);
 
 
-            if (status == OvergangSeinStatus.Aan)
+            if (status == OvergangSeinStatus.Aan || status == OvergangSeinStatus.Aan2)
             {
                 
                 SolidBrush brush = new SolidBrush(Color.White);

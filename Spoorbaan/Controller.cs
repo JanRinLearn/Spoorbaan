@@ -19,14 +19,25 @@ namespace Spoorbaan
             this.spoorbaan = spoorbaan;
             this.overgangTimer = overgangTimer;
             this.storingTimer = storingTimer;
-            overgangTimer.Tick += new EventHandler(storingTimer_Elapsed);
+            overgangTimer.Tick += new EventHandler(overgangTimer_Elapsed);
+            storingTimer.Tick += new EventHandler(storingTimer_Elapsed);
             this.g = g;
 
         }
 
-        private void overgangTimer_Elapsed()
+        private void overgangTimer_Elapsed(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            foreach (SpoorwegOvergang o in spoorbaan.Overgangen)
+            {
+                if (o.Status == OvergangSeinStatus.Aan)
+                {
+                    o.Status = OvergangSeinStatus.Aan2;
+                }
+                else if (o.Status == OvergangSeinStatus.Aan2)
+                {
+                    o.Status = OvergangSeinStatus.Aan;
+                }
+            }
         }
 
         private void storingTimer_Elapsed(object sender, EventArgs e)
@@ -58,19 +69,47 @@ namespace Spoorbaan
 
         }
 
-        private void UpdateOvergangen()
+        private void UpdateOvergangen(bool overgangLinks, bool overgangRechts)
         {
-            throw new System.NotImplementedException();
+            if (overgangLinks)
+            {
+                spoorbaan.Overgangen[0].Status = OvergangSeinStatus.Aan;
+                overgangTimer.Start();
+            }
+            else
+            {
+                spoorbaan.Overgangen[0].Status = OvergangSeinStatus.Uit;
+                overgangTimer.Stop();
+            }
+            if (overgangRechts)
+            {
+                spoorbaan.Overgangen[1].Status = OvergangSeinStatus.Aan;
+                overgangTimer.Start();
+            }
+            else
+            {
+                spoorbaan.Overgangen[1].Status = OvergangSeinStatus.Uit;
+                overgangTimer.Stop();
+            }
         }
 
-        private void UpdateStations()
+        private void UpdateStations(bool station)
         {
-            throw new System.NotImplementedException();
+            if (station)
+            {
+                spoorbaan.Stations[0].StationSeinStatus = StationSeinStatus.Groen;
+            }
+            else
+            {
+                spoorbaan.Stations[0].StationSeinStatus = StationSeinStatus.Rood;
+            }
         }
 
-        public void ZetSpoorwegStatus()
+        public void ZetSpoorwegStatus(bool overgangLinks, bool overgangRechts, bool station)
         {
-            throw new System.NotImplementedException();
+            UpdateOvergangen(overgangLinks, overgangRechts);
+            UpdateStations(station);
+            spoorbaan.Teken(g);
         }
 
         public void ZetStoring(bool actief)

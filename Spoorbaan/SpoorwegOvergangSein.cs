@@ -43,6 +43,10 @@ namespace Spoorbaan
                     Lamp1.Status = LampStatus.Aan;
                     Lamp2.Status = LampStatus.Uit;
                     break;
+                case OvergangSeinStatus.Aan2:
+                    Lamp1.Status = LampStatus.Uit;
+                    Lamp2.Status = LampStatus.Aan;
+                    break;
                 case OvergangSeinStatus.Uit:
                     Lamp1.Status = LampStatus.Uit;
                     Lamp2.Status = LampStatus.Uit;

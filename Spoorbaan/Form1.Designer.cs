@@ -30,22 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             this.TekenGrond = new System.Windows.Forms.Panel();
-            this.stationRecht = new System.Windows.Forms.CheckBox();
-            this.stationLinks = new System.Windows.Forms.CheckBox();
-            this.overgang2 = new System.Windows.Forms.CheckBox();
-            this.overgang1 = new System.Windows.Forms.CheckBox();
+            this.stationButton = new System.Windows.Forms.Button();
             this.storing = new System.Windows.Forms.CheckBox();
             this.overgangTimer = new System.Windows.Forms.Timer(this.components);
             this.storingTimer = new System.Windows.Forms.Timer(this.components);
+            this.overgang1 = new System.Windows.Forms.Button();
+            this.overgang2 = new System.Windows.Forms.Button();
             this.TekenGrond.SuspendLayout();
             this.SuspendLayout();
             // 
             // TekenGrond
             // 
-            this.TekenGrond.Controls.Add(this.stationRecht);
-            this.TekenGrond.Controls.Add(this.stationLinks);
             this.TekenGrond.Controls.Add(this.overgang2);
             this.TekenGrond.Controls.Add(this.overgang1);
+            this.TekenGrond.Controls.Add(this.stationButton);
             this.TekenGrond.Controls.Add(this.storing);
             this.TekenGrond.Location = new System.Drawing.Point(13, 13);
             this.TekenGrond.Name = "TekenGrond";
@@ -53,46 +51,15 @@
             this.TekenGrond.TabIndex = 0;
             this.TekenGrond.Paint += new System.Windows.Forms.PaintEventHandler(this.TekenGrond_Paint);
             // 
-            // stationRecht
+            // stationButton
             // 
-            this.stationRecht.AutoSize = true;
-            this.stationRecht.Location = new System.Drawing.Point(17, 198);
-            this.stationRecht.Name = "stationRecht";
-            this.stationRecht.Size = new System.Drawing.Size(123, 17);
-            this.stationRecht.TabIndex = 4;
-            this.stationRecht.Text = "Station Recht Groen";
-            this.stationRecht.UseVisualStyleBackColor = true;
-            // 
-            // stationLinks
-            // 
-            this.stationLinks.AutoSize = true;
-            this.stationLinks.Location = new System.Drawing.Point(17, 174);
-            this.stationLinks.Name = "stationLinks";
-            this.stationLinks.Size = new System.Drawing.Size(119, 17);
-            this.stationLinks.TabIndex = 3;
-            this.stationLinks.Text = "Station Links Groen";
-            this.stationLinks.UseVisualStyleBackColor = true;
-            // 
-            // overgang2
-            // 
-            this.overgang2.AutoSize = true;
-            this.overgang2.Location = new System.Drawing.Point(17, 109);
-            this.overgang2.Name = "overgang2";
-            this.overgang2.Size = new System.Drawing.Size(82, 17);
-            this.overgang2.TabIndex = 2;
-            this.overgang2.Text = "Overgang 2";
-            this.overgang2.UseVisualStyleBackColor = true;
-            // 
-            // overgang1
-            // 
-            this.overgang1.AutoSize = true;
-            this.overgang1.Location = new System.Drawing.Point(17, 86);
-            this.overgang1.Name = "overgang1";
-            this.overgang1.Size = new System.Drawing.Size(82, 17);
-            this.overgang1.TabIndex = 1;
-            this.overgang1.Text = "Overgang 1";
-            this.overgang1.UseVisualStyleBackColor = true;
-            this.overgang1.CheckedChanged += new System.EventHandler(this.overgang1_CheckedChanged);
+            this.stationButton.Location = new System.Drawing.Point(17, 169);
+            this.stationButton.Name = "stationButton";
+            this.stationButton.Size = new System.Drawing.Size(140, 23);
+            this.stationButton.TabIndex = 3;
+            this.stationButton.Text = "Wissel Lichten Station";
+            this.stationButton.UseVisualStyleBackColor = true;
+            this.stationButton.Click += new System.EventHandler(this.stationButton_Click);
             // 
             // storing
             // 
@@ -113,6 +80,26 @@
             // 
             this.storingTimer.Interval = 1000;
             // 
+            // overgang1
+            // 
+            this.overgang1.Location = new System.Drawing.Point(17, 75);
+            this.overgang1.Name = "overgang1";
+            this.overgang1.Size = new System.Drawing.Size(140, 23);
+            this.overgang1.TabIndex = 4;
+            this.overgang1.Text = "Toggel Overgang Links";
+            this.overgang1.UseVisualStyleBackColor = true;
+            this.overgang1.Click += new System.EventHandler(this.overgang1_Click);
+            // 
+            // overgang2
+            // 
+            this.overgang2.Location = new System.Drawing.Point(17, 105);
+            this.overgang2.Name = "overgang2";
+            this.overgang2.Size = new System.Drawing.Size(140, 23);
+            this.overgang2.TabIndex = 5;
+            this.overgang2.Text = "Toggel Overgang Rechts";
+            this.overgang2.UseVisualStyleBackColor = true;
+            this.overgang2.Click += new System.EventHandler(this.overgang2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -130,13 +117,12 @@
         #endregion
 
         private System.Windows.Forms.Panel TekenGrond;
-        private System.Windows.Forms.CheckBox stationRecht;
-        private System.Windows.Forms.CheckBox stationLinks;
-        private System.Windows.Forms.CheckBox overgang2;
-        private System.Windows.Forms.CheckBox overgang1;
         private System.Windows.Forms.CheckBox storing;
         private System.Windows.Forms.Timer overgangTimer;
         private System.Windows.Forms.Timer storingTimer;
+        private System.Windows.Forms.Button stationButton;
+        private System.Windows.Forms.Button overgang2;
+        private System.Windows.Forms.Button overgang1;
     }
 }
 

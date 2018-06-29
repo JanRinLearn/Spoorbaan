@@ -8,7 +8,7 @@ namespace Spoorbaan
 {
     public enum OvergangSeinStatus
     {
-        Aan, Uit, Storing
+        Aan, Aan2, Uit, Storing
     }
     public enum StationSeinStatus
     {
