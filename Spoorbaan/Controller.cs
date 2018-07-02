@@ -31,9 +31,9 @@ namespace Spoorbaan
             {
                 if (o.Status == OvergangSeinStatus.Aan)
                 {
-                    o.Status = OvergangSeinStatus.Aan2;
+                    o.Status = OvergangSeinStatus.AanR;
                 }
-                else if (o.Status == OvergangSeinStatus.Aan2)
+                else if (o.Status == OvergangSeinStatus.AanR)
                 {
                     o.Status = OvergangSeinStatus.Aan;
                 }

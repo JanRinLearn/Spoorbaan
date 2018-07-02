@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Spoorbaan
 {
+    //Om ervoor te kunnen zorgen dat de lampen van een sein apart kunnen worden aangezet, is er een extra waarde bij deze enum gekomen.
     public enum OvergangSeinStatus
     {
-        Aan, Aan2, Uit, Storing
+        Aan, AanR, Uit, Storing
     }
     public enum StationSeinStatus
     {

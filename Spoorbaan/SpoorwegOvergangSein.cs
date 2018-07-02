@@ -29,13 +29,9 @@ namespace Spoorbaan
                 SetStatus(value);
             }
         }
-
+        //Override voor het tekenen van een overgang sein.
+        //In de Set Status worden de juiste lampen aangezet, dus het enige wat gedaan moet worden is het tekenen.
         private void SetStatus(OvergangSeinStatus s)
-        {
-            status = s;
-        }
-        //Wordt nog verder aangepast, is nog niet volledig klaar.
-        public override void Teken(Graphics g)
         {
             switch (status)
             {
@@ -43,7 +39,7 @@ namespace Spoorbaan
                     Lamp1.Status = LampStatus.Aan;
                     Lamp2.Status = LampStatus.Uit;
                     break;
-                case OvergangSeinStatus.Aan2:
+                case OvergangSeinStatus.AanR:
                     Lamp1.Status = LampStatus.Uit;
                     Lamp2.Status = LampStatus.Aan;
                     break;
@@ -58,8 +54,10 @@ namespace Spoorbaan
                 default:
                     break;
             }
-            
-            
+        }
+        
+        public override void Teken(Graphics g)
+        {                  
             base.Teken(g);
             
         }

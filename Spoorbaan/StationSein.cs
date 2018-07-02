@@ -17,7 +17,7 @@ namespace Spoorbaan
         public StationSein(int breedte, int hoogte, int x, int y) : base(breedte, hoogte, x, y)
         {
             Lamp lamp1 = new Lamp(x, y);
-            Lamp lamp2 = new Lamp(x, y+20, LampKleur.Groen);
+            Lamp lamp2 = new Lamp(x, y + 20, LampKleur.Groen);
             Lamp1 = lamp1;
             Lamp2 = lamp2;
         }
@@ -30,17 +30,9 @@ namespace Spoorbaan
                 SetStatus(value);
             }
         }
-        
+
         private void SetStatus(StationSeinStatus s)
         {
-            status = s;
-        }
-        //Override voor het tekenen van een stationsein. Bij de juiste status worden de correcte lampen aangezet
-        //De lampen hebben de correcte kleur nodig al ontvangen bij de constructor
-        //zodra de juiste lampen aanstaan wordt de basis teken methode aangeroepen om het sein daadwerkelijk te tekenen
-        public override void Teken(Graphics g)
-        {
-            
             switch (status)
             {
                 case StationSeinStatus.Groen:
@@ -62,8 +54,13 @@ namespace Spoorbaan
                 default:
                     break;
             }
+        }
+        //Override voor het tekenen van een stationsein.
+        //In de Set Status worden de juiste lampen aangezet, dus het enige wat gedaan moet worden is het tekenen.
+        public override void Teken(Graphics g)
+        {
             base.Teken(g);
-            
+
         }
     }
 }
