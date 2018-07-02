@@ -57,6 +57,9 @@ namespace Spoorbaan
         //Ik veronschuldig mij alvast voor de lengte van deze methode.
         //De reden waarom ik arrays maak met daarin alle individuele delen van de spoorboom is zodat ik zeker weet dat er geen fouten onstaan bij het tekenen
         //Oorsprokelijk was het idee om een lange witte rechthoek te tekenen, en vervolgens de rode rechthoeken eroverheen te tekenen.
+
+        //Tekent als eerst de achtergrond, dan de seinen, en vervolgens (mids de status op aan staat) de spoorbomen gebaseerd op de orientatie
+        //Als laatste wordt er ongeacht van de overgang status een spoorbaan getekend gebaseerd op de orientatie
         public override void Teken(Graphics g)
         {
             base.Teken(g);

@@ -15,7 +15,8 @@ namespace Spoorbaan
         {
             this.rotatie = rotatie;
         }
-
+        //Tekent als eerste de achtergrond, en dan de twee lijnen voor de rails gebaseerd op de rotatie
+        //Hoewel de nummers die nu staan correct zijn, begrijp ik niet volledig waarom deze set cijfers de juiste curves geven.
         public override void Teken(Graphics g)
         {
             base.Teken(g);

@@ -8,6 +8,7 @@ namespace Spoorbaan
 {
     public class Spoorbaan
     {
+        //De breedte en hoogte hier wordt gebruikt voor de individuele elementen, terwijl de X en Y worden gebruikt voor het totale teken vlak.
         private int breedte;
         private int hoogte;
         private List<SpoorwegOvergang> overgangen = new List<SpoorwegOvergang>();
@@ -16,6 +17,7 @@ namespace Spoorbaan
         private int y;
         private List<SpoorElement> elementen = new List<SpoorElement>();
 
+        //De spoorbaan wordt meteen gevult in de constructor
         public Spoorbaan(int breedte, int hoogte,int x, int y)
         {
             this.breedte = breedte;
@@ -67,7 +69,7 @@ namespace Spoorbaan
             SpoorRailsKrom krom180G3 = new SpoorRailsKrom(breedte, hoogte, 500, 400, RailRotatie._180);
             SpoorRailsKrom krom270G1 = new SpoorRailsKrom(breedte, hoogte, 0, 400, RailRotatie._270);
 
-            //Toevoegen aan de lijst
+            //Toevoegen aan de lijsten
             elementen.Add(trein);
             elementen.Add(spoorweg1);
             elementen.Add(spoorweg2);
@@ -94,6 +96,7 @@ namespace Spoorbaan
 
         }
 
+        //Roept de teken methode aan voor elke spoorelement in de elementen lijst.
         public void Teken(Graphics g)
         {
             SolidBrush sb = new SolidBrush(Color.Pink);

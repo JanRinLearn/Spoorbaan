@@ -14,6 +14,7 @@ namespace Spoorbaan
         private Spoorbaan spoorbaan;
         private Graphics g;
 
+        //Controller krijgt de timer mee vanuit de form, te samen met een graphics element die gemaakt is door het tekenvlak
         public Controller(Spoorbaan spoorbaan, Timer overgangTimer, Timer storingTimer, Graphics g)
         {
             this.spoorbaan = spoorbaan;
@@ -24,7 +25,8 @@ namespace Spoorbaan
             this.g = g;
 
         }
-
+        //Timer staat op het moment op 1000 miliseconden.
+        //Als de overgang timer over is, dan wordt het andere licht aangezet voor alle overgangen die aanstaan.
         private void overgangTimer_Elapsed(object sender, EventArgs e)
         {
             foreach (SpoorwegOvergang o in spoorbaan.Overgangen)
@@ -39,9 +41,11 @@ namespace Spoorbaan
                 }
             }
         }
-
+        //Storing timer staat op 1000 miliseconden
+        //Bij de storing timer gaan alle lichten aan en uit knipperren.
         private void storingTimer_Elapsed(object sender, EventArgs e)
         {
+            
             foreach (SpoorwegOvergang o in spoorbaan.Overgangen)
             {
                 if (o.Status == OvergangSeinStatus.Storing)
@@ -68,7 +72,9 @@ namespace Spoorbaan
             spoorbaan.Teken(g);
 
         }
-
+        //Gebaseert op de status van de overgang knoppen worden de overgangen en de bijbehorende timer aan of uit gezet
+        //List waarde staat best hard coded voor maar twee overgangen, mogelijk had je meerdere lijsten kunnen hebben waarin als de status van de meegegeven lijst index op true stond,
+        //dan gaat de bijbehorende overgang ook aan.
         private void UpdateOvergangen(bool overgangLinks, bool overgangRechts)
         {
             if (overgangLinks)
@@ -92,7 +98,8 @@ namespace Spoorbaan
                 overgangTimer.Stop();
             }
         }
-
+        //De station button regelt of de linker sein aan moet of de rechter sein.
+        //Zie commentaar hierboven over hard coded argumentatie.
         private void UpdateStations(bool station)
         {
             if (station)
@@ -105,13 +112,15 @@ namespace Spoorbaan
             }
         }
 
+        //Publieke methode om vanuit de form de spoorweg aan te passen.
         public void ZetSpoorwegStatus(bool overgangLinks, bool overgangRechts, bool station)
         {
             UpdateOvergangen(overgangLinks, overgangRechts);
             UpdateStations(station);
             spoorbaan.Teken(g);
         }
-
+        //publieke methode om vanuit de form de storing aan te zetten.
+        //Als de methode wordt aangezet dan wordt ook de overgang timer gestopt.
         public void ZetStoring(bool actief)
         {
             List<SpoorwegOvergang> opslagOvergang = spoorbaan.Overgangen;
@@ -119,6 +128,7 @@ namespace Spoorbaan
 
             if (actief)
             {
+                overgangTimer.Stop();
                 foreach (SpoorwegOvergang Overgang in spoorbaan.Overgangen)
                 {
                     Overgang.Status = OvergangSeinStatus.Storing;
@@ -127,7 +137,7 @@ namespace Spoorbaan
                 {
                     Overgang.StationSeinStatus = StationSeinStatus.Storing;
                 }
-                overgangTimer.Start();
+                storingTimer.Start();
             }
 
 
@@ -141,7 +151,7 @@ namespace Spoorbaan
                 {
                     Overgang.StationSeinStatus = StationSeinStatus.Groen;
                 }
-                overgangTimer.Stop();
+                storingTimer.Stop();
             }
 
         }

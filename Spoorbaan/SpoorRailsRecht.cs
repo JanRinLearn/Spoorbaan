@@ -15,7 +15,8 @@ namespace Spoorbaan
         {
             base.orientatie = orientatie;
         }
-
+        //Tekent eerst de achtergrond, daarna de rails gebaseerd op de orientatie.
+        //Er is een extra else toegevoegd in het magische geval dat er geen orientatie is gedefineerd, om een crash te voorkomen.
         public override void Teken(Graphics g)
         {
             base.Teken(g);

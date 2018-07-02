@@ -8,10 +8,10 @@ namespace Spoorbaan
 {
     public class TreinStation : SpoorElement
     {
-        private StationSeinStatus status;
+        private StationSeinStatus status = StationSeinStatus.Uit;
         private StationSein sein1;
         private StationSein sein2;
-
+        
         public TreinStation(int breedte, int grootte, int x, int y) : base(breedte, grootte, x, y)
         {
             sein1 = new StationSein(10, 30, x, y);
@@ -45,6 +45,7 @@ namespace Spoorbaan
             }
         }
 
+        //Set de sein status gebaseerd op de sein status van het treinstation
         private void SetStatus(StationSeinStatus s)
         {
             status = s;
@@ -71,7 +72,7 @@ namespace Spoorbaan
             }
         }
 
-        
+        //Tekent eerst de achtergrond, gevolgt door de seinen, en vervolgens door een plaatje van een station die in de applicatie zit.
         public override void Teken(Graphics g)
         {
             base.Teken(g);
