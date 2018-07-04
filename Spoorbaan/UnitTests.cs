@@ -21,7 +21,7 @@ namespace Spoorbaan
             //Arrange
             Lamp lamp = new Lamp(4, 4);
             //Act
-            
+
             //Assert
             Assert.True(lamp.Kleur == LampKleur.Rood && lamp.Status == LampStatus.Uit);
         }
@@ -66,7 +66,7 @@ namespace Spoorbaan
             if (kleur == 1)
             {
                 lamp.Kleur = LampKleur.Groen;
-            }   
+            }
             //Act
             lamp.Teken(g);
             //Assert
@@ -180,8 +180,76 @@ namespace Spoorbaan
             Assert.True(verwachtseinStatus == sein.Lamp1.Status && verwachtseinStatus2 == sein.Lamp2.Status);
         }
 
+        //Test om te bewijzen dat een station sein kan worden aangemaakt en dat een station sein lampen bevat waarvan een groen is.
+        [Fact]
+        public void OvergangSeinCreationTest()
+        {
+            //Arrange
+            SpoorwegOvergangSein sein = new SpoorwegOvergangSein(100, 100, 100, 100);
+            //Act
 
-        #endregion
+            //Assert
+            Assert.True(LampKleur.Rood == sein.Lamp2.Kleur && LampKleur.Rood == sein.Lamp1.Kleur);
+        }
 
+        //Test om te bewijzen dat de sein teken methode aangeroepen kan worden
+        [Fact]
+        public void OvergangSeinDrawTest()
+        {
+            //Arrange
+            Control control = new Control();
+            Graphics g = control.CreateGraphics();
+            SpoorwegOvergangSein sein = new SpoorwegOvergangSein(4, 4, 4, 4);
+            //Act
+            sein.Teken(g);
+            //Assert
+        }
+
+        //Tests om de werking van de station status te bewijzen
+        [Theory]
+        [InlineData(1, 1, 0)]
+        [InlineData(2, 0, 1)]
+        [InlineData(3, 1, 1)]
+        [InlineData(4, 0, 0)]
+        public void OvergangStatusTest(int status, int verwachtlinks, int verwachtrechts)
+        {
+            //arrange
+            SpoorwegOvergangSein sein = new SpoorwegOvergangSein(100, 100, 100, 100);
+            LampStatus verwachtseinStatus = LampStatus.Uit;
+            LampStatus verwachtseinStatus2 = LampStatus.Uit;
+            //act
+            switch (status)
+            {
+                case 1:
+                    sein.Status = OvergangSeinStatus.Aan;
+                    break;
+                case 2:
+                    sein.Status = OvergangSeinStatus.AanR;
+                    break;
+                case 3:
+                    sein.Status = OvergangSeinStatus.Storing;
+                    break;
+                case 4:
+                    sein.Status = OvergangSeinStatus.Uit;
+                    break;
+                default:
+                    break;
+            }
+            if (verwachtlinks == 1)
+            {
+                verwachtseinStatus = LampStatus.Aan;
+            }
+            if (verwachtrechts == 1)
+            {
+                verwachtseinStatus2 = LampStatus.Aan;
+            }
+
+            //assert
+            Assert.True(verwachtseinStatus == sein.Lamp1.Status && verwachtseinStatus2 == sein.Lamp2.Status);
+
+
+            #endregion
+
+        }
     }
 }
