@@ -20,16 +20,16 @@ namespace Spoorbaan
             this.grootte = grootte;
             this.x = x;
             this.y = y;
-            
-            
+
+
         }
 
         public Orientatie Orientatie
         {
-            get => orientatie;
+            get => this.orientatie;
             set
             {
-                value = orientatie;
+                this.orientatie = value;
             }
         }
         //De base methode tekent de achtergrond voor het sproorelement.

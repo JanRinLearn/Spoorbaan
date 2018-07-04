@@ -85,7 +85,7 @@ namespace Spoorbaan
         }
         #endregion
 
-        //Dit is een region voor de sein classe, en de afgeleiden hiervan
+        //Dit is een region voor de sein classe, en de directe afgeleiden hiervan
         #region Unit Tests Seinen
 
         //Test om te bewijzen dat een sein kan worden aangemaakt en dat een base classe sein geen lampen bevat.
@@ -248,8 +248,30 @@ namespace Spoorbaan
             Assert.True(verwachtseinStatus == sein.Lamp1.Status && verwachtseinStatus2 == sein.Lamp2.Status);
 
 
-            #endregion
+            
 
         }
+        #endregion
+
+        //De region voor alle spoorelementen
+        #region Unit Tests Spoorelementen
+
+        //Bewijst dat een rechte rail spoorelement gemaakt kan worden, dat de orientatie verandert kan worden en dat de teken methode werkt
+        [Fact]
+        public void RailsRechtCreationAndDrawTest()
+        {
+            //Arrange
+            SpoorRailsRecht spoorRailsRecht = new SpoorRailsRecht(1, 1, 1, 1, Orientatie.Verticaal);
+            Control control = new Control();
+            Graphics g = control.CreateGraphics();
+            //Act
+            spoorRailsRecht.Teken(g);
+            spoorRailsRecht.Orientatie = Orientatie.Horizontaal;
+            //Assert
+            Assert.True(spoorRailsRecht.Orientatie == Orientatie.Horizontaal);
+        }
+
+
+        #endregion
     }
 }
