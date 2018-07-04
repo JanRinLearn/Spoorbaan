@@ -33,7 +33,7 @@ namespace Spoorbaan
 
         private void SetStatus(StationSeinStatus s)
         {
-            switch (status)
+            switch (s)
             {
                 case StationSeinStatus.Groen:
                     Lamp1.Status = LampStatus.Uit;

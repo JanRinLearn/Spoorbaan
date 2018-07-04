@@ -33,7 +33,7 @@ namespace Spoorbaan
         //In de Set Status worden de juiste lampen aangezet, dus het enige wat gedaan moet worden is het tekenen.
         private void SetStatus(OvergangSeinStatus s)
         {
-            switch (status)
+            switch (s)
             {
                 case OvergangSeinStatus.Aan:
                     Lamp1.Status = LampStatus.Aan;
