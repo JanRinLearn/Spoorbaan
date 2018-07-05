@@ -56,6 +56,7 @@ namespace Spoorbaan
         }
         //Alle button methode werken het zelfde, er wordt gekeken of de bool voor de button aan stond, en wordt de bool geflipt,
         //vervolgens worden de status van alle buttons doorgestuurd naar de controller om de spoorbaan aan te passen.
+        //De buttons lijken de timers te blokkeren van het automatisch hertekenen van het teken vlak, ik weet niet zeker of dat een known error is of dat ik iets fout doe.
         private void stationButton_Click(object sender, EventArgs e)
         {
             if (station)

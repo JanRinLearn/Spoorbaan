@@ -11,11 +11,11 @@ namespace Spoorbaan
         private StationSeinStatus status = StationSeinStatus.Uit;
         private StationSein sein1;
         private StationSein sein2;
-        
+
         public TreinStation(int breedte, int grootte, int x, int y) : base(breedte, grootte, x, y)
         {
             sein1 = new StationSein(10, 30, x, y);
-            sein2 = new StationSein(10, 30, x+90, y);
+            sein2 = new StationSein(10, 30, x + 90, y);
         }
 
         public StationSein Sein1
@@ -23,7 +23,7 @@ namespace Spoorbaan
             get => sein1;
             set
             {
-                value = sein1;
+                sein1 = value;
             }
         }
 
@@ -32,7 +32,7 @@ namespace Spoorbaan
             get => sein2;
             set
             {
-                value = sein2;
+                sein2 = value;
             }
         }
 
@@ -80,7 +80,7 @@ namespace Spoorbaan
             sein1.Teken(g);
             sein2.Teken(g);
             g.DrawImage(image, x, y, breedte, grootte);
-            
+
         }
     }
 }

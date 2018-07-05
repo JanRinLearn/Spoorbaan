@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.TekenGrond = new System.Windows.Forms.Panel();
+            this.overgang2 = new System.Windows.Forms.Button();
+            this.overgang1 = new System.Windows.Forms.Button();
             this.stationButton = new System.Windows.Forms.Button();
             this.storing = new System.Windows.Forms.CheckBox();
             this.overgangTimer = new System.Windows.Forms.Timer(this.components);
             this.storingTimer = new System.Windows.Forms.Timer(this.components);
-            this.overgang1 = new System.Windows.Forms.Button();
-            this.overgang2 = new System.Windows.Forms.Button();
             this.TekenGrond.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,9 +51,29 @@
             this.TekenGrond.TabIndex = 0;
             this.TekenGrond.Paint += new System.Windows.Forms.PaintEventHandler(this.TekenGrond_Paint);
             // 
+            // overgang2
+            // 
+            this.overgang2.Location = new System.Drawing.Point(163, 683);
+            this.overgang2.Name = "overgang2";
+            this.overgang2.Size = new System.Drawing.Size(140, 23);
+            this.overgang2.TabIndex = 5;
+            this.overgang2.Text = "Toggel Overgang Rechts";
+            this.overgang2.UseVisualStyleBackColor = true;
+            this.overgang2.Click += new System.EventHandler(this.overgang2_Click);
+            // 
+            // overgang1
+            // 
+            this.overgang1.Location = new System.Drawing.Point(17, 683);
+            this.overgang1.Name = "overgang1";
+            this.overgang1.Size = new System.Drawing.Size(140, 23);
+            this.overgang1.TabIndex = 4;
+            this.overgang1.Text = "Toggel Overgang Links";
+            this.overgang1.UseVisualStyleBackColor = true;
+            this.overgang1.Click += new System.EventHandler(this.overgang1_Click);
+            // 
             // stationButton
             // 
-            this.stationButton.Location = new System.Drawing.Point(17, 169);
+            this.stationButton.Location = new System.Drawing.Point(358, 683);
             this.stationButton.Name = "stationButton";
             this.stationButton.Size = new System.Drawing.Size(140, 23);
             this.stationButton.TabIndex = 3;
@@ -79,26 +99,6 @@
             // storingTimer
             // 
             this.storingTimer.Interval = 1000;
-            // 
-            // overgang1
-            // 
-            this.overgang1.Location = new System.Drawing.Point(17, 75);
-            this.overgang1.Name = "overgang1";
-            this.overgang1.Size = new System.Drawing.Size(140, 23);
-            this.overgang1.TabIndex = 4;
-            this.overgang1.Text = "Toggel Overgang Links";
-            this.overgang1.UseVisualStyleBackColor = true;
-            this.overgang1.Click += new System.EventHandler(this.overgang1_Click);
-            // 
-            // overgang2
-            // 
-            this.overgang2.Location = new System.Drawing.Point(17, 105);
-            this.overgang2.Name = "overgang2";
-            this.overgang2.Size = new System.Drawing.Size(140, 23);
-            this.overgang2.TabIndex = 5;
-            this.overgang2.Text = "Toggel Overgang Rechts";
-            this.overgang2.UseVisualStyleBackColor = true;
-            this.overgang2.Click += new System.EventHandler(this.overgang2_Click);
             // 
             // Form1
             // 

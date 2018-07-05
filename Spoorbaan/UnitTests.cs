@@ -271,6 +271,111 @@ namespace Spoorbaan
             Assert.True(spoorRailsRecht.Orientatie == Orientatie.Horizontaal);
         }
 
+        //Bewijst dat een rechte rail spoorelement gemaakt kan worden en dat de teken methode werkt
+        [Fact]
+        public void RailsKromCreationAndDrawTest()
+        {
+            //Arrange
+            SpoorRailsKrom spoorRailsKrom = new SpoorRailsKrom(1, 1, 1, 1, RailRotatie._0);
+            Control control = new Control();
+            Graphics g = control.CreateGraphics();
+            //Act
+            spoorRailsKrom.Teken(g);
+            //Assert
+            
+        }
+        //Bewijst dat een Trein station aangemaakt kan worden en dat de teken methode aangeroepen kan worden
+        [Fact]
+        public void StationCreationAndDrawTest()
+        {
+            //Arrange
+            TreinStation treinStation = new TreinStation(1, 1, 1, 1);
+            Control control = new Control();
+            Graphics g = control.CreateGraphics();
+            //Act
+            treinStation.Teken(g);
+            //Assert
+            Assert.True(treinStation.StationSeinStatus == StationSeinStatus.Uit);
+        }
+
+        //Bewijst dat een Trein station aangemaakt kan worden en dat de status verandert kan worden
+        [Fact]
+        public void TreinStationStatusTest()
+        {
+            //Arrange
+            TreinStation treinStation = new TreinStation(1, 1, 1, 1);
+            //Act
+            treinStation.StationSeinStatus = StationSeinStatus.Groen;
+            //Assert
+            Assert.True(treinStation.StationSeinStatus == StationSeinStatus.Groen && treinStation.Sein1.Status == StationSeinStatus.Groen && treinStation.Sein2.Status == StationSeinStatus.Rood);
+        }
+
+        //Bewijst dat een Spoorweg overgang aangemaakt kan worden en dat de teken methode aangeroepen kan worden
+        [Fact]
+        public void OvergangCreationAndDrawTest()
+        {
+            //Arrange
+            SpoorwegOvergang overgang = new SpoorwegOvergang(1, 1, 1, 1,Orientatie.Horizontaal);
+            Control control = new Control();
+            Graphics g = control.CreateGraphics();
+            //Act
+            overgang.Teken(g);
+            //Assert
+            Assert.True(overgang.Status == OvergangSeinStatus.Uit);
+        }
+
+        //Bewijst dat een Spoorweg overgang aangemaakt kan worden en dat de status verandert kan worden
+        [Fact]
+        public void OvergangElementStatusTest()
+        {
+            //Arrange
+            SpoorwegOvergang overgang = new SpoorwegOvergang(1, 1, 1, 1, Orientatie.Verticaal);
+            //Act
+            overgang.Status = OvergangSeinStatus.Aan;
+            //Assert
+            Assert.True(overgang.Status == OvergangSeinStatus.Aan && overgang.Sein1.Status == OvergangSeinStatus.Aan && overgang.Sein2.Status == OvergangSeinStatus.Aan);
+        }
+
+
+
+        #endregion
+
+        //Als laatste, de tests voor de overkoepelende spoorbaan en controller zelf
+        #region Unit Tests Spoorbaan en Controller
+
+        //Test om te bewijzen dat de spoorbaan gemaakt kan worden, getekend kan worden en dat de overgangen en station lists gevult zijn.
+        [Fact]
+        public void SpoorbaanCreationTest()
+        {
+            //Arrange
+            Spoorbaan spoorbaan = new Spoorbaan(1, 1, 1, 1);
+            Control control = new Control();
+            Graphics g = control.CreateGraphics();
+            //Act
+            spoorbaan.Teken(g);
+            //Assert
+            Assert.NotEmpty(spoorbaan.Overgangen);
+            Assert.NotEmpty(spoorbaan.Stations);
+        }
+
+        //Test om te bewijzen dat de Controller gemaakt kan worden en dat de zet storing functie kan worden aangeroepen.
+        [Fact]
+        public void ControllerCreationTest()
+        {
+            //Arrange
+            Spoorbaan spoorbaan = new Spoorbaan(1, 1, 1, 1);
+            Control control = new Control();
+            Graphics g = control.CreateGraphics();
+            Timer timer = new Timer();
+            Timer timer2 = new Timer();
+            Controller controller = new Controller(spoorbaan, timer, timer2, g);
+            bool test = false;
+            //Act
+            controller.ZetStoring(test);
+            //Assert
+        }
+
+
 
         #endregion
     }

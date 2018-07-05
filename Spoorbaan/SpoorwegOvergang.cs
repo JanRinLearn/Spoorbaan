@@ -20,21 +20,21 @@ namespace Spoorbaan
             this.orientatie = orientatie;
         }
 
-        public Sein Sein1
+        public SpoorwegOvergangSein Sein1
         {
             get => sein1;
             set
             {
-                value = sein1;
+               sein1 = value;
             }
         }
 
-        public Sein Sein2
+        public SpoorwegOvergangSein Sein2
         {
             get => sein2;
             set
             {
-                value = sein2;
+                sein2 = value;
             }
         }
 
@@ -51,7 +51,8 @@ namespace Spoorbaan
         private void SetStatus(OvergangSeinStatus s)
         {
             status = s;
-
+            sein1.Status = s;
+            sein2.Status = s;
         }
 
         //Ik veronschuldig mij alvast voor de lengte van deze methode.
